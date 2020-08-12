@@ -27,7 +27,7 @@ function print(hero) {
   console.log(text);
 }
 ```
-
+```
 const { alias, name, actor } = hero;
 ```
 이 코드가 객체에서 값들을 추출해서 새로운 상수로 선언해 주는 것이다.
