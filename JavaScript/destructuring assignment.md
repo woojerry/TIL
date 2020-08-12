@@ -33,7 +33,8 @@ const { alias, name, actor } = hero;
 이 코드가 객체에서 값들을 추출해서 새로운 상수로 선언해 주는 것이다.
 
 다음 예제에서도 만약 데이터 베이스에 name, img_url, recent, url, like의 값이 저장돼있으면,
-주석부분과 {name, img_url, recent, url, like} 이부분은 동일하다.
+주석부분과
+```{name, img_url, recent, url, like}``` 이부분은 동일하다.
 ```
 for (let i = 0; i < stars.length; i++) {
                                 let star = stars[i];
