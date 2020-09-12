@@ -57,25 +57,25 @@
 
 ### 함수선언문(Function Declaration)
 - 일반적인 프로그래밍 언어에서의 함수 선언과 비슷한 형식
-```
-// 함수의 호출.
-function printName(firstname) {
-  var myname = "HEEE";
-  return myname + " " +  firstname;
-}
-```
+  ```
+  // 함수의 호출.
+  function printName(firstname) {
+    var myname = "HEEE";
+    return myname + " " +  firstname;
+  }
+  ```
 
 ### 함수표현식(Function Expression)
 - 변수값에 함수 표현을 담아 놓은 형태. 유연한 자바스크립트 언어의 특징을 활용한 선언 방식
-```
-var test1 = function() { // (익명) 함수표현식
-  return '익명 함수표현식';
-}
+  ```
+  var test1 = function() { // (익명) 함수표현식
+    return '익명 함수표현식';
+  }
 
-var test2 = function test2() { // 기명 함수표현식 
-  return '기명 함수표현식';
-}
-```
+  var test2 = function test2() { // 기명 함수표현식 
+    return '기명 함수표현식';
+  }
+  ```
 
 ### 함수선언문과 함수표현식의 차이 
 - 함수선언문은 호이스팅에 영향을 받지만, 함수표현식은 호이스팅에 영향을 받지 않는다.
