@@ -1,6 +1,5 @@
-## React
-- React 사용이유
-  - Web app(앱이랑 사용성이 동일한 웹)을 만들기 위해서 
+## React 사용이유
+- Web app(앱이랑 사용성이 동일한 웹)을 만들기 위해서 
 
 ## VSCode에서 React세팅하기
 - terminal에서 npx create-react-app [프로젝트 이름] 입력
