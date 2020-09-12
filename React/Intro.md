@@ -11,6 +11,7 @@
 ## 구성
 - APP.js는 메인페이지 들어갈 HTML 짜는 곳이고 실제 메인페이지는 public/index.html이다.
   - index.js가 APP.js를 index.html넣어주는 명령을 하는곳
+
 - public은 static파일 보관함, node_modules는 라이브러리 모은 폴더, src가 소스코드 보관함
 
 ## JSX
