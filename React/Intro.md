@@ -26,11 +26,12 @@
 ## State
 - 데이터는 변수에 넣거나, state에 넣는 방법이 있다.
 - state는 변수 대신 쓰는 데이터 저장공간 
- 
+- state에 데이터 저장 이유 : Web App처럼 사용하기 위해 -> **state는 변경되면 HTML이 자동으로 재렌더링 된다.** 
+
  1. import React, {use State}
  2. userStte()사용 ex) let [state데이터, state데이터 변경 함수] = usestate(['data1','data2']) 
  3. 문자, 숫자, array, object 다 저장가능
-- state에 데이터 저장 이유 : Web App처럼 사용하기 위해 -> **state는 변경되면 HTML이 자동으로 재렌더링 된다.**
+
 
 ## Event
 - onClick ={ function() }
