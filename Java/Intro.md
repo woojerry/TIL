@@ -17,7 +17,7 @@
   -  ex) private String firstName = "Benjamin";
   
 - Const
- - 모든 글자 대문자로
- - ex) pubic Strnig CONT_NAME_USER = "Woo-jea";
+  - 모든 글자 대문자로
+  - ex) pubic Strnig CONT_NAME_USER = "Woo-jea";
 
   
