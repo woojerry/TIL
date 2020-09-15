@@ -42,7 +42,7 @@
   ```
   function example(){
   //var newArray = title; // 이과정에서 이렇게 하면 복사가 아닌 값 공유만 일어난다.
-  var newArray = [...title]; // 값 공유가 아닌 deep copy를 이용해야한다.
+  var newArray = **[...title]**; // 값 공유가 아닌 deep copy를 이용해야한다.
   newArray[0] = 'Dark knight';
   changeTitle(newArray);
   ```
