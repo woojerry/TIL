@@ -4,6 +4,8 @@
 ## VSCode에서 React세팅하기
 - terminal에서 npx create-react-app [프로젝트 이름] 입력
   - 여기서 npx는 nodejs 설치가 돼있을 때 사용하는 라이브러리 설치 명령어이고, create-react-app은 리액트 세팅을 도와주는 라이브러리이다.
+- VSCode 자동정렬
+  - Ctrl + A 로 코드를 모두 선택한 후, Ctrl + K + F
   
 ## VSCode에서 React코드 미리보기
 - terminal에서 **npm start** 입력
@@ -42,7 +44,7 @@
   ```
   function example(){
   //var newArray = title; // 이과정에서 이렇게 하면 복사가 아닌 값 공유만 일어난다.
-  var newArray = **[...title]**; // 값 공유가 아닌 deep copy를 이용해야한다.
+  var newArray = [...title]; // 값 공유가 아닌 deep copy를 이용해야한다.
   newArray[0] = 'Dark knight';
   changeTitle(newArray);
   ```
