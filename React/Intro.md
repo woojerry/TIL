@@ -38,7 +38,7 @@
  let [title,changeTitle] = useState(['Tenet','AVA','Matthias and Maxime']);
   ```
  4. **State변경** 
- - Array, Object state데이터는 **state를 직접 건드리지 않고** deep copy하고 변경함수() 이용. 
+ - Array, Object state데이터는 **state를 직접 건드리지 않고** deep copy이용 + 변경함수에 집어넣기 
   ```
   function example(){
   //var newArray = title; // 이과정에서 이렇게 하면 복사가 아닌 값 공유만 일어난다.
