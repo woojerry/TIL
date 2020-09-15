@@ -6,7 +6,7 @@
   - 여기서 npx는 nodejs 설치가 돼있을 때 사용하는 라이브러리 설치 명령어이고, create-react-app은 리액트 세팅을 도와주는 라이브러리이다.
   
 ## VSCode에서 React코드 미리보기
-- terminal에서 npm start 입력
+- terminal에서 **npm start** 입력
 
 ## 구성
 - APP.js는 메인페이지 들어갈 HTML 짜는 곳이고 실제 메인페이지는 public/index.html이다.
@@ -28,10 +28,12 @@
 - state는 변수 대신 쓰는 데이터 저장공간 
 - state에 데이터 저장 이유 : Web App처럼 사용하기 위해 -> **state는 변경되면 HTML이 자동으로 재렌더링 된다.** 
 
- 1. import React, {use State}
+ 1. **import React, {use State}**
  2. userStte()사용 ex) let [state데이터, state데이터 변경 함수] = usestate(['data1','data2']) 
- 3. 문자, 숫자, array, object 다 저장가능
-
+ 3. 문자, 숫자, array, object 다 저장가능  
+  ```
+ let [title,changeTitle] = useState(['Tenet','AVA','Matthias and Maxime']);
+  ```
 
 ## Event
-- onClick ={ function() }
+- onClick ={ function() } OR onClick = { ()=>{실행할 내용} }
