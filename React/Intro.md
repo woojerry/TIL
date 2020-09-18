@@ -8,7 +8,7 @@
   - Ctrl + A 로 코드를 모두 선택한 후, Ctrl + K + F
   
 ## VSCode에서 React코드 미리보기
-- terminal에서 **npm start** 입력
+- terminal에서 ```npm start*``` 입력
 
 ## Warning 없애기
 - /* eslint-disable */ 입력
