@@ -22,7 +22,7 @@
 ## JSX
 - React에서는 HTML처럼 생긴 JSX라는 문법을 사용
  
- 1. <div>에 클래스 줄 때 class대신 className
+  1. <div>에 클래스 줄 때 class대신 className
   2. 데이터 바인딩(서버에서 받아온 데이터 HTML에 넣는 것)이 쉬움 -> {변수명}, {함수명()}
   3. Style속성 -> style {object자료형으로 만든 스타일} ex) ``` <div style={ { color : 'blue', fontSize : '30px' } }```  **중괄호 사용**
     - camelCase 작명관습에 따라 속성명을 사용
