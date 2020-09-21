@@ -62,7 +62,28 @@
       ref2.deposit(2000);
       ref1.checkMyBalance();
       ref2.checkMyBalance(); // 동일한 5000 값이 나온다
-   ```   
+      }
+   ``` 
+   
+   ## 생성자
+   ```java
+    class BankAccount{
+   String accNumber;
+   String ssNumber;
+   int balance;
+   
+   public BankAccount(String acc, String ss, int bal){ // 생성자
+    accNumber = acc;
+    ssNumber = ss;
+    balance = bal;
+    }
+    ...
+   publuc statuc void main(String[] args){
+    BankAccount woo = new BankAccount("12-34-89","99999-999999",10000);
+    ...}
+  ```
+    
+
    
    
   
