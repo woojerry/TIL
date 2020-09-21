@@ -66,19 +66,22 @@
    ``` 
    
    ## 생성자
-   ```java
-    class BankAccount{
-   String accNumber;
-   String ssNumber;
-   int balance;
-   
-   public BankAccount(String acc, String ss, int bal){ // 생성자
-    accNumber = acc;
-    ssNumber = ss;
-    balance = bal;
+    - 생성자는 new 연산자를 통해서 인스턴스를 생성할 때 반드시 호출이 되고 제일 먼저 실행되는 일종의 메소드
+    - 컴파일러는 자동으로 Default 생성자를 만들어준다
+ 
+ ```java
+   class BankAccount{
+    String accNumber;
+    String ssNumber;
+    int balance;
+
+    public BankAccount(String acc, String ss, int bal){ // 생성자
+     accNumber = acc;
+     ssNumber = ss;
+     balance = bal;
     }
     ...
-   publuc statuc void main(String[] args){
+   publuc static void main(String[] args){
     BankAccount woo = new BankAccount("12-34-89","99999-999999",10000);
     ...}
   ```
