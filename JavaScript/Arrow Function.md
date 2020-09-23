@@ -1,5 +1,5 @@
 ## Arrow Function
-
+  - arrow function은 함수스코프를 생성하고 (**실행 컨텍스트 생성시 this 바인딩 하지 않는다**)
 ```js
 var b = function (a){ // 원래 함수
   return a*a        
