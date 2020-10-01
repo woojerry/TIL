@@ -87,7 +87,7 @@
   ```
  
   ## ToString()
-  - 인스턴스 생성 후 호출했을 때 toString()을 만들어주지 않으면, 자동으로 컴파일러가 object.ToString()을 출력
+  - 인스턴스 생성 후 호출했을 때 인스턴스 메소드에서 toString()을 만들어주지 않으면, 자동으로 컴파일러가 object.ToString()을 출력
   
   ```java
   class Circle{
