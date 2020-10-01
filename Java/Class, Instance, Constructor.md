@@ -85,9 +85,29 @@
     BankAccount woo = new BankAccount("12-34-89","99999-999999",10000);
     ...}
   ```
-    
-
-   
-   
+ 
+  ## ToString()
+  - 인스턴스 생성 후 호출했을 때 toString()을 만들어주지 않으면, 자동으로 컴파일러가 object.ToString()을 출력
+  
+  ```java
+  class Circle{
+	private int cen1, cen2, rad;
+	public Circle(int c1, int c2, int r) {
+		cen1 = c1;
+		cen2 = c2;
+		rad = r;
+	}
+ ...
+ 
+	public String toString() {
+		return "Circle("+cen1+","+cen2+") " + "반지름" + rad;
+	}
+ 
+ class Main{
+ 	public static void main(String[] args) {
+		Circle a = new Circle(2, 3, 30);
+		System.out.println("원 a : " + a); // ToString()안해줬을 때 HW5.Circle@79fc0f2f 
+                                     // ToString() 후 Circle(2,3) 반지름30
+ ```  
   
  
