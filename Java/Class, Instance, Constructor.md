@@ -3,6 +3,7 @@
  - 인스턴스화 : 클래스 -> 객체(인스턴스)
  - 인스턴스를 가리키는 것을 참조변수라 한다.
  - 일반적으로 인스턴스의 데이터가 아닌 **메소드** 를 접근한다.
+ - 파일명으로 정의된 클래스에만 public class로 선언 가능 ex) Project.java 파일 내에서 ```public class Project```만 가능
 
 ```java
  class BankAccount{
