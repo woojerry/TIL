@@ -6,3 +6,12 @@
     ```jsx
     <input onChange={ (e)=> { e.target.value } } />
     ```
+    ```jsx
+    <div className="publish">
+          <input onChange= {(e)=>{입력값변경(e.target.value)}} />
+          <button onClick={()=> {
+            var arrayCopy = [...title]; // deep copy 사용
+            arrayCopy.unshift(입력값); // unshift() 배열의 맨앞에 추가, push() 맨뒤에 추가.
+            changeTitle(arrayCopy);
+          }}>저장</button>
+       </div>
