@@ -1,5 +1,5 @@
 ##Class
-  > component만드는 기본문법 (**예전 React 문법**) -> 매우 불편  
+  > component 만드는 기본문법 (**예전 React 문법**) -> 매우 불편  
   - class : 변수/함수 보관하는 곳
   - constructor : class의 변수/초기값 저장
   - state는 constructor 안에 작성
