@@ -27,7 +27,7 @@ Destructuring assignment (구조분해 할당)
   ```
   
 ## 객체 구조분해 할당
-  - **객체는 index 대신 key가 존재. 
+  - **객체는 index 대신 key가 존재.**  (객체 구조분해 할당은 조금 어려워서 나중에 적용하면서 다시 익히자!)
   ```jsx
 
   const iu = {
@@ -37,12 +37,25 @@ Destructuring assignment (구조분해 할당)
   }
   
   const {
-    name : n, // n = 아이유 
-    age : a, // a = 25
-    gender : g // g = female 
+    name  // name = 아이유 
+    age // age = 25
+    gender // gender = female 
   } = iu
+  ```
   
+  - default parameter와의 연동
+  ```jsx
+  const phone = { 
+    name : 'iPhone',
+    color : undefined
+  }
   
+  const {
+    name : n, // n = iPhone
+    version : v = '6+' //  version 매칭할 값 없으면 v = 6+
+    color: c = 'silver' // color는 default parameter이므로 c = sliver 
+    } = phone;  
+  ```
   ```jsx
   const ironMan = {
     name: '토니 스타크',
@@ -56,18 +69,14 @@ Destructuring assignment (구조분해 할당)
     alias: '캡틴 아메리카'
   };
 
-  //function print(hero) {
-  //  const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${
-  //    hero.actor
-  //  } 입니다.`;
-  //  console.log(text);
-  //}
-
   function print(hero) {
     const { alias, name, actor } = hero;
     const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
     console.log(text);
   }
+  //function print(hero) {
+  //  const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다.`;  
+  //  console.log(text);}
   ```
   ```jsx
   const { alias, name, actor } = hero;
@@ -79,12 +88,12 @@ Destructuring assignment (구조분해 할당)
   ```{name, img_url, recent, url, like}``` 이부분은 동일하다.
   ```jsx
   for (let i = 0; i < stars.length; i++) {
-                                  let star = stars[i];
-                                  let {name, img_url, recent, url, like} = star;
-                              //    let name = star['name']
-                              //    let url = star['url']
-                              //    let imgUrl = star['img_url']
-                              //    let recentWork = star['recent']
-                              //    let like = star['like']
-                                         }
+   let star = stars[i];
+   let {name, img_url, recent, url, like} = star;
+   //    let name = star['name']
+   //    let url = star['url']
+   //    let imgUrl = star['img_url']
+   //    let recentWork = star['recent']
+   //    let like = star['like']
+  }                               
   ```
