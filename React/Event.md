@@ -1,4 +1,12 @@
-## Input
+## Event
+
+### onClick 
+
+```onClick ={ function() } ``` 
+
+``` onClick = { ()=>{실행할 내용} }```
+
+### Input
   - React에서는 HTML과 달리 <input>태그를 꼭 닫아줘야함 ```<input/>``` 
   - input Eventhandler -  onChange(), onInput()
     - React에서는 onChange와 onInput이 무언가를 입력 받았을 때 실행하도록 하는 것으로 같다.
