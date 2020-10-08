@@ -30,18 +30,19 @@
     }
   
   ### for-each문
-    ```java
-    int [] ar = {1,2,3,4,5};
-    for(int e : ar) { // 배열 안에 있는 값 돌릴 때
-      System.out.println(e);
-    }
-    ```
-    ```java
-    Box[] ar = new Box[5];
-    for(int e : ar){
-      System.println(e);
-    }
-    ```
+  ```java
+      int [] ar = {1,2,3,4,5};
+      for(int e : ar) { // 배열 안에 있는 값 돌릴 때
+        System.out.println(e);
+      }
+  ```
+    
+  ```java
+        Box[] ar = new Box[5];
+        for(int e : ar){
+          System.println(e);
+        }
+  ```
 
   ### 2차원 배열
   - ```int[][] arr = new int[3][4];``` 2차원 배열 생성
