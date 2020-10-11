@@ -42,6 +42,18 @@ Destructuring assignment (구조분해 할당)
     gender // gender = female 
   } = iu
   ```
+  ```jsx
+  const people = { 
+  'name': '홍길동',
+  'address': '송파구',
+  'age': 33
+  }
+  const {name:lastName, address, age, hometown='강원도'} = people; // lastName = '홍길동', adress = '송파구', age = 33, hometown = '강원도' 
+  //const lastName = people['name']
+  // const address = people['address']
+  // const age = people['age']
+  // const hometown = people['hometown'] ? people['hometown] : '강원도'
+  ```
   
   - default parameter와의 연동
   ```jsx
@@ -55,18 +67,6 @@ Destructuring assignment (구조분해 할당)
     version : v = '6+' //  version 매칭할 값 없으면 v = 6+
     color: c = 'silver' // color는 default parameter이므로 c = sliver 
     } = phone;  
-  ```
-  ```jsx
-  const people = { 
-  'name': '홍길동',
-  'address': '송파구',
-  'age': 33
-  }
-  const {name:lastName, address, age, hometown='강원도'} = people; // lastName = '홍길동', adress = '송파구', age = 33, hometown = '강원도' 
-  //const lastName = people['name']
-  // const address = people['address']
-  // const age = people['age']
-  // const hometown = people['hometown'] ? people['hometown] : '강원도'
   ```
 
   ```jsx
