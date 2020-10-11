@@ -57,6 +57,19 @@ Destructuring assignment (구조분해 할당)
     } = phone;  
   ```
   ```jsx
+  const people = { 
+  'name': '홍길동',
+  'address': '송파구',
+  'age': 33
+  }
+  const {name:lastName, address, age, hometown='강원도'} = people; // lastName = '홍길동', adress = '송파구', age = 33, hometown = '강원도' 
+  //const lastName = people['name']
+  // const address = people['address']
+  // const age = people['age']
+  // const hometown = people['hometown'] ? people['hometown] : '강원도'
+  ```
+
+  ```jsx
   const ironMan = {
     name: '토니 스타크',
     actor: '로버트 다우니 주니어',
