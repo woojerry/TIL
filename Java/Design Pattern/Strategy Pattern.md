@@ -19,10 +19,10 @@ public abstract class Duck {
   }
   
   public void performQuack() {
-    quackBehavior.quack();
+    quackBehavior.quack(); 
   }
   
-  public void setFlyBehavior(FlyBehavior fb) {
+  public void setFlyBehavior(FlyBehavior fb) { // Fly 방법을 바꿀 때 사용
     flyBehavior = fb;
   }
   
@@ -78,3 +78,7 @@ public class ModelDuck extends Duck {
   }
 }
 ```
+```java
+public static void main(String[] args){
+  MallardDuck mallard = new MallardDuck();
+  mallard.performQuack(); // Quack
