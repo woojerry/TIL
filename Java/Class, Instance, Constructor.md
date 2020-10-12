@@ -89,7 +89,7 @@
  
   ## ToString()
   - 인스턴스 생성 후 호출했을 때 인스턴스 메소드에서 toString()을 만들어주지 않으면, 자동으로 컴파일러가 object.ToString()을 출력
-  
+  - 프로그래머가 정의하는 toString()은 메소드 
   ```java
   class Circle{
 	private int cen1, cen2, rad;
