@@ -2,10 +2,7 @@
   - 디자인 원칙 1 : 달라지는 부분을 찾아내고, 달라지지 않는 부분으로부터 분리 시킴. 
   - 디자인 원칙 2 : 구현이 아닌 인터페이스에 맞춰서 프로그래밍 (Program to an interface, not an implementation)
 ![InkedInkedduck2_LIdd](https://user-images.githubusercontent.com/50645183/95763466-06bf1a00-0cea-11eb-82eb-560a7c2427b3.jpg)
-
-
-
-
+  - 유지보수를 위해 변하는 부분은 has-a관계가 좋다. 재사용할 때 상속보다는 합성이 좋다. (상속은 불변하므로, 자식 클래스가 다 영향 받으므로)
 
 ```java
 public abstract class Duck {
