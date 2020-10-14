@@ -33,6 +33,7 @@ public interface Subject {
 ```
 ```java
 public class WeatherData implements Subject { // Subject
+  
   private ArrayList observers; // ArrayList -> Array의 크기 수시로 변경 가능
   private float temperature;
   private float humidity;
@@ -49,25 +50,26 @@ public class WeatherData implements Subject { // Subject
   public void removeObserver(Observer o) {
     int i = observers.indexOf(o);
     if (i >= 0) { // index 값에 observer가 있으면
-    observers.remove(i);
+    observers.remove(i); // 삭제
     }
   }
   
-  public void notifyObservers() {
+  public void notifyObservers() { // 변경이 일어나면 모든 객체에 변경 사항을 업데이트
     for (Observer observer : observers) { // Observer형으로 가져옴 // for(int a : arr)
+      Observer observer = (Observer) observers.get(i); // 객체를 가져와서 업데이트
       observer.update(temperature, humidity, pressure);
     }
   }
-  
+    
   public void measurementsChanged() { // *한줄로 바뀜
     notifyObservers();          // display 장치가 추가 되더라도 코드 바뀔 필요X
   }
   
-  public void setMeasurements(float temperature, float humidity, float pressure) {
-    this.temperature = temperature;
+  public void setMeasurements(float temperature, float humidity, float pressure) { // 값을 set 하라는 명령이 들어오면
+    this.temperature = temperature; //아래의 모든 변수의 값을 업데이트하고
     this.humidity = humidity;
     this.pressure = pressure;
-    measurementsChanged();
+    measurementsChanged(); // 모든 옵저버에게 알림
   }
   
   public float getTemperature() { return temperature; }
