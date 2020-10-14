@@ -47,8 +47,7 @@ public class WeatherData implements Subject { // Subject
   }
   
   public void notifyObservers() {
-    for (int i = 0; i < observers.size(); i++) {
-      Observer observer = (Observer)observers.get(i); // Observer형으로 가져옴 
+    for (Observer observer : observers) { // Observer형으로 가져옴 // for(int a : arr)
       observer.update(temperature, humidity, pressure);
     }
   }
@@ -105,7 +104,9 @@ public static void main(String[] args) {
   
   weatherData.setMeasurements(80,65,30.4f);
   weatherData.setMeasurements(82,75,29.3f);
-```  
+}
+```
+
   
 
 
