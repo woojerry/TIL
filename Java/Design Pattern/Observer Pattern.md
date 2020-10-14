@@ -74,7 +74,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
   private float humidity;
   private Subject weatherData;
   
-  public CurrentConditionsDisplay(Subject weatherData) {
+  public CurrentConditionsDisplay(Subject weatherData) { // 가입하고 싶은 Subject -> weatherData 
     this.weatherData = weatherData;
     weatherData.registerObserver(this);
   }
