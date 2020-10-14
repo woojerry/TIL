@@ -1,7 +1,7 @@
 ## Observer Pattern
 ![캡처](https://user-images.githubusercontent.com/50645183/95947480-a9ca7d80-0e29-11eb-91cc-ddb4866d2514.PNG)
 
-여러개의 display device에 뿌려주기 위한 Weather data object를 만듦
+여러개의 display device에 뿌려주기 위한 Weather data object를 만들려고 할 때 ..
 
 
 ```java
@@ -13,7 +13,7 @@ public class WeatherData { // 원래 코드
     float humidity = getHumidity();
     float pressure = getPressure();
     
-    currentConditionsDisplay.update(temp, humidity, pressure);
+    currentConditionsDisplay.update(temp, humidity, pressure); // Display가 추가될 때마다 class WeatherData 수정
     statisticsDisplay.update(temp, humidity, pressure);
     forecastDisplay.update(temp, humidity, pressure);
     
