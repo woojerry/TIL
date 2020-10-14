@@ -32,7 +32,7 @@ public interface Subject {
 }
 ```
 ```java
-public class WeatherData implements Subject { // Subject
+public class WeatherData implements Subject { // ** // Subject 
   
   private ArrayList observers; // ArrayList -> Array의 크기 수시로 변경 가능
   private float temperature;
