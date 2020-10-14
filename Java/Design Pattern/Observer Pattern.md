@@ -69,6 +69,11 @@ public class WeatherData implements Subject { // Subject
 }
 ```
 ```java
+public interface Observer {
+  public void update(float temp, float humidity, float pressure);
+}
+```
+```java
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
   private float temperature;
   private float humidity;
@@ -90,6 +95,8 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
   }
 }
 ```
+
+
 
 
  
