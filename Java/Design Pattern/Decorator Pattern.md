@@ -117,9 +117,9 @@ public class StarbuzzCoffee { **
     printBeverage(beverage);
     
     Beverage beverage2 = new DarkRoast(); // Make a Dark Roast object. // 0.99
-    beverage2 = new Mocha(beverage2); // Wrap it with a Mocha.// + 0.2
-    beverage2 = new Mocha(beverage2); // Wrap it in a second Mocha.// + 0.2
-    beverage2 = new Whip(beverage2); // Wrap it in a Whip.// +0.1
+    beverage2 = new Mocha(beverage2); // Decorate it with a Mocha.// + 0.2
+    beverage2 = new Mocha(beverage2); // Decorate it in a second Mocha.// + 0.2
+    beverage2 = new Whip(beverage2); // Decorate it in a Whip.// +0.1
     printBeverage(beverage2); // DarkRoast Coffee, Mocha, Mocha + Whip $1.49
     
     Beverage beverage3 = new HouseBlend();
