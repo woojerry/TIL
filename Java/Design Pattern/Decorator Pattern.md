@@ -89,7 +89,7 @@ public class SteamedMilk extends CondimentDecorator {
   }
   
   public double cost() {
-    return beverage.cost() + .10;
+    return beverage.cost() + .10; // *beverage중 하나 + SteamedMilk 가격 0.10
   }
 }
 ```
