@@ -39,7 +39,7 @@
     
   ```java
         Box[] ar = new Box[5];
-        for(int e : ar){
+        for(Box e : ar){
           System.println(e);
         }
   ```
