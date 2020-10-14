@@ -5,7 +5,7 @@
   - 유지보수를 위해 변하는 부분은 has-a관계가 좋다. 재사용할 때 상속보다는 합성이 좋다. (상속은 불변하므로, 자식 클래스가 다 영향 받으므로)
 
 ```java
-public abstract class Duck {
+public abstract class Duck { // **
   FlyBehavior flyBehavior;
   QuackBehavior quackBehavior;
   
