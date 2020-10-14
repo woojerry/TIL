@@ -30,5 +30,5 @@ public float cost() { // 종류 바뀔 때마다 코드가 바뀌어야한다.
 ```
 
 - Classes should be open for extension, but closed for modification. 변경 X, 추가 O
-- Decorator Pattern 사용
-- Java I/O도 이와 비슷
+- Decorator Pattern 사용. 
+- Java I/O, Python도 이와 비슷
