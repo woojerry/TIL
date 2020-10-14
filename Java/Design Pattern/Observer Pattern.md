@@ -25,6 +25,13 @@ public class WeatherData { // 원래 코드
 ![weather2](https://user-images.githubusercontent.com/50645183/95955773-557aca00-0e38-11eb-8d85-4ae6ab6f0c76.PNG)
 
 ```java
+public interface Subject {
+  public void registerObserver(Observer o);
+  public void removeObserver(Observer o);
+  public void notifyObservers();
+}
+```
+```java
 public class WeatherData implements Subject { // Subject
   private ArrayList observers; // ArrayList -> Array의 크기 수시로 변경 가능
   private float temperature;
@@ -52,7 +59,7 @@ public class WeatherData implements Subject { // Subject
     }
   }
   
-  public void measurementsChanged() { // 한줄로 바뀜
+  public void measurementsChanged() { // *한줄로 바뀜
     notifyObservers();          // display 장치가 추가 되더라도 코드 바뀔 필요X
   }
   
