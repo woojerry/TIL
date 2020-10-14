@@ -59,7 +59,7 @@ public class SimplePizzaFactory {//** // 피자 종류가 바뀌더라도 이 �
 public class PizzaStore {
 	SimplePizzaFactory factory;
  
-	public PizzaStore(SimplePizzaFactory factory) { // main에서 factory 넘기면 SimplePizzaFactory형으로 받음
+	public PizzaStore(SimplePizzaFactory factory) { // main에서 factory 넘기면 SimplePizzaFactory형으로 받음 ??
 		this.factory = factory;
 	}
  
