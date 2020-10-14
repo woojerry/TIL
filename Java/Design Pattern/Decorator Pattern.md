@@ -77,19 +77,60 @@ public abstract class CondimentDecorator extends Beverage {
 }
 ```
 ```java
-public class SteamedMilk extends CondimentDecorator {
+public class Whip extends CondimentDecorator {
   Beverage beverage;
   
-  public SteamedMilk(Beverage beverage) {
+  public Whip (Beverage beverage) {
     this.beverage = beverage;
   }
   
   public String getDescription() {
-    return beverage.getDescription() + ", Steamed Milk";
+    return beverage.getDescription() + ", Whip";
   }
   
   public double cost() {
-    return beverage.cost() + .10; // *beverage중 하나 + SteamedMilk 가격 0.10
+    return beverage.cost() + .10;  // *beverage중 하나 + Whip가격 0.10
+  }
+}
+   
+public class Mocha extends CondimentDecorator {
+  Beverage beverage;
+  
+  public Mocha(Beverage beverage) {
+    this.beverage = beverage;
+  }
+  
+  public String getDescription() {
+    return beverage.getDescription() + ", Mocha";
+  }
+  
+  public double cost() {
+    return beverage.cost() + .20;
+  }
+}
+```
+```java
+public class StarbuzzCoffee { **
+  
+  public static void main(String[] args) {
+    Beverage beverage = new Espresso();
+    printBeverage(beverage);
+    
+    Beverage beverage2 = new DarkRoast(); // Make a Dark Roast object. // 0.99
+    beverage2 = new Mocha(beverage2); // Wrap it with a Mocha.// + 0.2
+    beverage2 = new Mocha(beverage2); // Wrap it in a second Mocha.// + 0.2
+    beverage2 = new Whip(beverage2); // Wrap it in a Whip.// +0.1
+    printBeverage(beverage2);
+    
+    Beverage beverage3 = new HouseBlend();
+    beverage3 = new Soy(beverage3);
+    beverage3 = new Mocha(beverage3);
+    beverage3 = new Whip(beverage3);
+    printBeverage(beverage3);
+  }
+  
+  public static void printBeverage(Beverage beverage) {
+    System.out.println(beverage.getDescription() + " $" + beverage.cost());
   }
 }
 ```
