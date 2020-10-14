@@ -30,7 +30,7 @@ public float cost() { // 종류 바뀔 때마다 코드가 바뀌어야한다.
 ```
 
 - Classes should be open for extension, but closed for modification. 변경 X, 추가 O
-- Decorator Pattern 사용.
+- Decorator Pattern 사용. -> 새로운 첨가물이 들어와도 기존의 코드가 전혀 바뀌지 않는다.
 - Java I/O, Python도 이와 비슷
 
 ![c3](https://user-images.githubusercontent.com/50645183/95977027-4bb29000-0e53-11eb-8844-6f57940ae172.PNG)
