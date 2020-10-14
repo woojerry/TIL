@@ -120,7 +120,7 @@ public class StarbuzzCoffee { **
     beverage2 = new Mocha(beverage2); // Wrap it with a Mocha.// + 0.2
     beverage2 = new Mocha(beverage2); // Wrap it in a second Mocha.// + 0.2
     beverage2 = new Whip(beverage2); // Wrap it in a Whip.// +0.1
-    printBeverage(beverage2);
+    printBeverage(beverage2); // DarkRoast Coffee, Mocha, Mocha + Whip $1.49
     
     Beverage beverage3 = new HouseBlend();
     beverage3 = new Soy(beverage3);
