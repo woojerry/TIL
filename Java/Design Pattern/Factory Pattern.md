@@ -41,7 +41,6 @@ Pizza orderPizza(String type) {
 - PizzaStore클래스에서는 만들어진 어떤 종류의 Pizza이던 Pizza클래스로 보인다.
 - SimplePizzaFactory는 생성만 하기위한 클래스라 createPizza() 메소드만 갖고 있다.
 
-
 ```java
 public class SimplePizzaFactory {//** // 피자 종류가 바뀌더라도 이 클래스만 바뀐다
 
@@ -103,6 +102,8 @@ public static void main(String[] args) {
 ![p2](https://user-images.githubusercontent.com/50645183/96112846-39e9ef00-0f1e-11eb-99c6-bcc0ca00a7d6.PNG)
 
 ![p3](https://user-images.githubusercontent.com/50645183/96113019-7ae20380-0f1e-11eb-89e0-6ef250de4ad9.PNG)
+
+- 새로운 스타일의 피자가 생겨도 원래 있던 코드에 영향을 주지 않는다. (OCP : Open Closed Principle)
 
 ```java
 public static void main(String[] args) {
