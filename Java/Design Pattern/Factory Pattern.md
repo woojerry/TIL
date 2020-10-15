@@ -96,7 +96,7 @@ public static void main(String[] args) {
 
 ### Factory Method
 
-- NYStylePizza와 ChicagoPizza가 있다. 각 스타일의 피자마다 재료부터 다르다 ..
+- NYStylePizza와 ChicagoPizza가 있다.
 - 별도의 클래스 없이 다형성을 이용해 메소드 오버라이딩을 통해 사용
 
 ![p2](https://user-images.githubusercontent.com/50645183/96112846-39e9ef00-0f1e-11eb-99c6-bcc0ca00a7d6.PNG)
@@ -189,4 +189,87 @@ public class ChicagoPizzaStore extends PizzaStore {
 	}
 }
 ```
+
+-  각 뉴욕, 시카고 스타일 등등의 피자마다 재료부터 다르다 .. -> 
+```java
+public interface PizzaIngredientFactory {
+ 
+	public Dough createDough();
+	public Sauce createSauce();
+	public Cheese createCheese();
+	public Veggies[] createVeggies();
+	public Pepperoni createPepperoni();
+	public Clams createClam();
+ 
+}
+```
+```java
+package headfirst.factory.pizzaaf;
+
+public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
+ 
+	public Dough createDough() {
+		return new ThinCrustDough();
+	}
+ 
+	public Sauce createSauce() {
+		return new MarinaraSauce();
+	}
+ 
+	public Cheese createCheese() {
+		return new ReggianoCheese();
+	}
+ 
+	public Veggies[] createVeggies() {
+		Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+		return veggies;
+	}
+ 
+	public Pepperoni createPepperoni() {
+		return new SlicedPepperoni();
+	}
+
+	public Clams createClam() {
+		return new FreshClams();
+	}
+}
+```
+```java
+package headfirst.factory.pizzaaf;
+
+public class ChicagoPizzaIngredientFactory 
+	implements PizzaIngredientFactory 
+{
+
+	public Dough createDough() {
+		return new ThickCrustDough();
+	}
+
+	public Sauce createSauce() {
+		return new PlumTomatoSauce();
+	}
+
+	public Cheese createCheese() {
+		return new MozzarellaCheese();
+	}
+
+	public Veggies[] createVeggies() {
+		Veggies veggies[] = { new BlackOlives(), 
+		                      new Spinach(), 
+		                      new Eggplant() };
+		return veggies;
+	}
+
+	public Pepperoni createPepperoni() {
+		return new SlicedPepperoni();
+	}
+
+	public Clams createClam() {
+		return new FrozenClams();
+	}
+}
+```
+
+
+
 
