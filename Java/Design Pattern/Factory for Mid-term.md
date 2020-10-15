@@ -39,6 +39,7 @@ public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPi
 ```
 
 <hr>
+
 ```java
 public class NYPizzaStore extends PizzaStore {
  
