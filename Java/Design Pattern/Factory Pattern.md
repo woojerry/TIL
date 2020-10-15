@@ -96,7 +96,7 @@ public static void main(String[] args) {
 
 ### Factory Method
 
-- NYStyle Pizza와 ChicagoPizza가 있다.
+- NYStylePizza와 ChicagoPizza가 있다. 각 스타일의 피자마다 재료부터 다르다 ..
 - 별도의 클래스 없이 다형성을 이용해 메소드 오버라이딩을 통해 사용
 
 ![p2](https://user-images.githubusercontent.com/50645183/96112846-39e9ef00-0f1e-11eb-99c6-bcc0ca00a7d6.PNG)
