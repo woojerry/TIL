@@ -110,7 +110,7 @@ public static void main(String[] args) {
 	PizzaStore nyStore = new NYPizzaStore();
 	PizzaStore chicagoStore = new ChicagoPizzaStore();
 	
-Pizza pizza = nyStore.orderPizza("cheese"); // order 했을 때 NYPizzaStore의 orederPizza호출
+	Pizza pizza = nyStore.orderPizza("cheese"); // order 했을 때 NYPizzaStore의 orederPizza호출
 	System.out.println("Ethan ordered a " + pizza.getName() + "\n");
  
 	pizza = chicagoStore.orderPizza("cheese");
