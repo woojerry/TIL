@@ -88,12 +88,76 @@ public class PizzaStore {
 ```
 ```java
 public static void main(String[] args) {
-		SimplePizzaFactory factory = new SimplePizzaFactory();
-		PizzaStore store = new PizzaStore(factory);
+	SimplePizzaFactory factory = new SimplePizzaFactory();
+	PizzaStore store = new PizzaStore(factory);
 
-		Pizza pizza = store.orderPizza("cheese");
-		System.out.println("We ordered a " + pizza.getName() + "\n"); // We ordered a cheese Pizza
-		System.out.println(pizza);
+	Pizza pizza = store.orderPizza("cheese");
+	System.out.println("We ordered a " + pizza.getName() + "\n"); // We ordered a cheese Pizza
+	System.out.println(pizza);
 ```    
 
 ### Factory Method
+
+- NYStyle Pizza와 ChicagoPizza가 있다.
+```java
+public static void main(String[] args) {
+	PizzaStore nyStore = new NYPizzaStore();
+	PizzaStore chicagoStore = new ChicagoPizzaStore();
+	
+Pizza pizza = nyStore.orderPizza("cheese"); // order 했을 때 NYPizzaStore의 orederPizza호출
+	System.out.println("Ethan ordered a " + pizza.getName() + "\n");
+ 
+	pizza = chicagoStore.orderPizza("cheese");
+	System.out.println("Joel ordered a " + pizza.getName() + "\n");
+```
+```java
+package headfirst.factory.pizzafm;
+
+public abstract class PizzaStore {
+ 
+	abstract Pizza createPizza(String item);
+ 
+	public Pizza orderPizza(String type) {
+		Pizza pizza = createPizza(type); // createPizza는 다형성에 의해 NYPizzaStore의 메소드로
+		System.out.println("--- Making a " + pizza.getName() + " ---");
+		pizza.prepare();
+		pizza.bake();
+		pizza.cut();
+		pizza.box();
+		return pizza;
+	}
+}
+```
+```java
+public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPizza 없으므로
+						// Pizza Store의 orderPizza로
+	Pizza createPizza(String item) {
+		if (item.equals("cheese")) {
+			return new NYStyleCheesePizza();
+		} else if (item.equals("veggie")) {
+			return new NYStyleVeggiePizza();
+		} else if (item.equals("clam")) {
+			return new NYStyleClamPizza();
+		} else if (item.equals("pepperoni")) {
+			return new NYStylePepperoniPizza();
+		} else return null;
+	}
+}
+```
+```java
+public class ChicagoPizzaStore extends PizzaStore {
+
+	Pizza createPizza(String item) {
+        	if (item.equals("cheese")) {
+            		return new ChicagoStyleCheesePizza();
+        	} else if (item.equals("veggie")) {
+        	    	return new ChicagoStyleVeggiePizza();
+        	} else if (item.equals("clam")) {
+        	    	return new ChicagoStyleClamPizza();
+        	} else if (item.equals("pepperoni")) {
+            		return new ChicagoStylePepperoniPizza();
+        	} else return null;
+	}
+}
+```
+
