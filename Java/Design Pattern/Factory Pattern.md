@@ -35,6 +35,14 @@ Pizza orderPizza(String type) {
   - Factory Method
 
 ### Factory Class
+
+![p2](https://user-images.githubusercontent.com/50645183/96106604-5d10a080-0f16-11eb-9f6b-48d1a8556a93.jpg)
+
+
+- PizzaStore클래스에서는 만들어진 어떤 종류의 Pizza이던 Pizza클래스로 보인다.
+- SimplePizzaFactory는 생성만 하기위한 클래스라 createPizza() 메소드만 갖고 있다.
+
+
 ```java
 public class SimplePizzaFactory {//** // 피자 종류가 바뀌더라도 이 클래스만 바뀐다
 
