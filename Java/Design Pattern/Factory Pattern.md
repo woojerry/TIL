@@ -99,6 +99,7 @@ public static void main(String[] args) {
 ### Factory Method
 
 - NYStyle Pizza와 ChicagoPizza가 있다.
+- 별도의 클래스 없이 다형성을 이용해 메소드 오버라이딩을 통해 사용
 ```java
 public static void main(String[] args) {
 	PizzaStore nyStore = new NYPizzaStore();
@@ -115,7 +116,7 @@ package headfirst.factory.pizzafm;
 
 public abstract class PizzaStore {
  
-	abstract Pizza createPizza(String item);
+	abstract Pizza createPizza(String item); // abstract
  
 	public Pizza orderPizza(String type) {
 		Pizza pizza = createPizza(type); // createPizza는 다형성에 의해 NYPizzaStore의 메소드로
@@ -131,7 +132,7 @@ public abstract class PizzaStore {
 ```java
 public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPizza 없으므로
 						// Pizza Store의 orderPizza로
-	Pizza createPizza(String item) {
+	Pizza createPizza(String item) { // **
 		if (item.equals("cheese")) {
 			return new NYStyleCheesePizza();
 		} else if (item.equals("veggie")) {
@@ -147,7 +148,7 @@ public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPi
 ```java
 public class ChicagoPizzaStore extends PizzaStore {
 
-	Pizza createPizza(String item) {
+	Pizza createPizza(String item) { // **
         	if (item.equals("cheese")) {
             		return new ChicagoStyleCheesePizza();
         	} else if (item.equals("veggie")) {
