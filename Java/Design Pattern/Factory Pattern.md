@@ -38,7 +38,6 @@ Pizza orderPizza(String type) {
 
 ![p2](https://user-images.githubusercontent.com/50645183/96106604-5d10a080-0f16-11eb-9f6b-48d1a8556a93.jpg)
 
-
 - PizzaStore클래스에서는 만들어진 어떤 종류의 Pizza이던 Pizza클래스로 보인다.
 - SimplePizzaFactory는 생성만 하기위한 클래스라 createPizza() 메소드만 갖고 있다.
 
@@ -100,6 +99,11 @@ public static void main(String[] args) {
 
 - NYStyle Pizza와 ChicagoPizza가 있다.
 - 별도의 클래스 없이 다형성을 이용해 메소드 오버라이딩을 통해 사용
+
+![p2](https://user-images.githubusercontent.com/50645183/96112846-39e9ef00-0f1e-11eb-99c6-bcc0ca00a7d6.PNG)
+
+![p3](https://user-images.githubusercontent.com/50645183/96113019-7ae20380-0f1e-11eb-89e0-6ef250de4ad9.PNG)
+
 ```java
 public static void main(String[] args) {
 	PizzaStore nyStore = new NYPizzaStore();
