@@ -62,4 +62,5 @@ function App() {
   return(
     <h4>{ shoes[0].title}</h4> // "White and Black"  // 데이터 바인딩 
     <p>{ shoes[0].content } </p> // "Born in France",
+    ) }
 ```
