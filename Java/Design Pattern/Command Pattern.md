@@ -1,9 +1,13 @@
 ## Command Pattern
-- Remote controller 입장에서는 다 type이 Command형으로 보인다
+> 
+- Remote controller(Client) 입장에서는 다 type이 Command형으로 보인다.
+- 실제적으로는 Command의 Receiver가 역할을 수행
+- 무슨 종류던 setCommand에서 무엇을 실행하는지만 해줘서 command의 execute만 하면 된다.
 
 ```java
 public interface Command {
 	public void execute();
+	public void undo();
 }
 ```
 ```java
@@ -108,6 +112,45 @@ public class GarageDoor {
 	public void lightOff() {
 		System.out.println("Garage light is off");
 	}
+}
+```
+
+```java
+public class RemoteControlWithUndo { // 새로운 Command가 들어오더라도 RemoteControl은 바뀌지 않는다.
+	Command[] onCommands;
+	Command[] offCommands;
+	Command undoCommand;
+ 
+	public RemoteControlWithUndo() {
+		onCommands = new Command[7];
+		offCommands = new Command[7];
+ 
+		Command noCommand = new NoCommand();
+		for(int i=0;i<7;i++) {
+			onCommands[i] = noCommand;
+			offCommands[i] = noCommand;
+		}
+		undoCommand = noCommand;
+	}
+  
+	public void setCommand(int slot, Command onCommand, Command offCommand) {
+		onCommands[slot] = onCommand;
+		offCommands[slot] = offCommand;
+	}
+ 
+	public void onButtonWasPushed(int slot) {
+		onCommands[slot].execute();
+		undoCommand = onCommands[slot];
+	}
+ 
+	public void offButtonWasPushed(int slot) {
+		offCommands[slot].execute();
+		undoCommand = offCommands[slot];
+	}
+ 
+	public void undoButtonWasPushed() {
+		undoCommand.undo();
+	}	
 }
 ```
 
