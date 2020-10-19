@@ -23,11 +23,11 @@ public class Singleton {
 
 ```java
 public class Singleton {
-	protected static Singleton uniqueInstance;
+	private static Singleton uniqueInstance;
  
 	// other useful instance variables here
  
-	protected Singleton() {}
+	private Singleton() {}
  
 	public static synchronized Singleton getInstance() { // synchronized로 멀티스레딩 문제 해결
 		if (uniqueInstance == null) {
