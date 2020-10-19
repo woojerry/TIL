@@ -21,6 +21,23 @@ public class SimplePizzaFactory {//** // 피자 종류가 바뀌더라도 이 �
 
 ![p2](https://user-images.githubusercontent.com/50645183/96112846-39e9ef00-0f1e-11eb-99c6-bcc0ca00a7d6.PNG)
 
+
+```java
+public abstract class PizzaStore {
+ 
+	abstract Pizza createPizza(String item); // abstract
+ 
+	public Pizza orderPizza(String type) {
+		Pizza pizza = createPizza(type); // createPizza는 다형성에 의해 NYPizzaStore의 메소드로
+		System.out.println("--- Making a " + pizza.getName() + " ---");
+		pizza.prepare();
+		pizza.bake();
+		pizza.cut();
+		pizza.box();
+		return pizza;
+	}
+}
+
 ```java
 public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPizza 없으므로
 						// Pizza Store의 orderPizza로
