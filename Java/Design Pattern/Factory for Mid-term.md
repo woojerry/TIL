@@ -38,7 +38,7 @@ public abstract class PizzaStore {
 	}
 }
 
-```java
+
 public class NYPizzaStore extends PizzaStore { // 하지만 여기에는 orderPizza 없으므로
 						// Pizza Store의 orderPizza로
 	Pizza createPizza(String item) { // **
