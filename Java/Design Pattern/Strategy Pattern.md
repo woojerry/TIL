@@ -18,16 +18,16 @@ public abstract class Duck { // **
     flyBehavior.fly(); // flyBehavior의 fly호출
   }
   
-  public void performQuack() {
-    quackBehavior.quack(); 
-  }
-  
   public void setFlyBehavior(FlyBehavior fb) { // Fly 방법을 바꿀 때 사용
     flyBehavior = fb;
   }
   
   public void setQuackBehavior(QuackBehavior qb) {
     quackBehavior = qb;
+  }
+  
+  public void performQuack() {
+    quackBehavior.quack(); 
   }
   
   public void swim() {
