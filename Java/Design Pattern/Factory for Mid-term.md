@@ -1,6 +1,6 @@
 ![p2](https://user-images.githubusercontent.com/50645183/96106604-5d10a080-0f16-11eb-9f6b-48d1a8556a93.jpg)
 ```java
-ublic class PizzaStore {
+public class PizzaStore {
 	SimplePizzaFactory factory;
  
 	public PizzaStore(SimplePizzaFactory factory) { // main에서 factory 넘기면 SimplePizzaFactory형으로 받음 ??
