@@ -8,15 +8,13 @@ ublic class PizzaStore {
 	}
  
 	public Pizza orderPizza(String type) { // 피자를 주문하면
-		Pizza pizza;
- 
+		Pizza pizza; 
 		pizza = factory.createPizza(type); // 팩토리에게 createPizza호출
                                           // Pizza type 받음
 		pizza.prepare();
 		pizza.bake();
 		pizza.cut();
 		pizza.box();
-
 		return pizza;
 	}
   // other methods here
