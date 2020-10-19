@@ -14,10 +14,6 @@ public abstract class Duck { // **
   
   public abstract void display(); // Duck 종류마다 다르므로 override해서 사용
   
-  public void performFly() {
-    flyBehavior.fly(); // flyBehavior의 fly호출
-  }
-  
   public void setFlyBehavior(FlyBehavior fb) { // Fly 방법을 바꿀 때 사용
     flyBehavior = fb;
   }
@@ -25,7 +21,9 @@ public abstract class Duck { // **
   public void setQuackBehavior(QuackBehavior qb) {
     quackBehavior = qb;
   }
-  
+    public void performFly() {
+    flyBehavior.fly(); // flyBehavior의 fly호출
+  }
   public void performQuack() {
     quackBehavior.quack(); 
   }
