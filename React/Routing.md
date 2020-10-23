@@ -13,7 +13,7 @@
 - App.js에서 ```<Route>```태그 안에 원하는 HTML넣어준다. 
 ```jsx
 <Route path="/detail">
-        <div>디테일페이지</div>
+        <div>HTML about detail</div>
 </Route>
 ```
 - React Router는 페이지마다 다른 HTML파일이 아닌 HTML내부의 내용을 갈아치워 다른페이지처럼 보여주는 것이다. (index.html만 있음)
