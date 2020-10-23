@@ -64,3 +64,25 @@ function App() {
     <p>{ shoes[0].content } </p> // "Born in France",
     ) }
 ```
+```jsx
+ <div className="container">
+        <div className="row">{
+          shoes.map((a,i)=> {
+            return <Card shoes = {shoes[i]} i ={i}/>
+          })
+        }
+        </div>
+      </div>
+
+
+function Card(props) {
+  return (
+      <div className="col-md4"> // scr="" 데이터 바인딩 하려면 src = {}
+        <img src={'https://codingapple1.github.io/shop/shoes' + (props.i + 1)+ +'.jpg'} />
+        <h4>{props.shoes.title}</h4>
+        <p>{props.shoes.content} & {props.shoes.price} </p>
+
+      </div>
+
+  )
+}
