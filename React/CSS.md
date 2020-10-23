@@ -68,7 +68,7 @@ function App() {
  <div className="container">
         <div className="row">{
           shoes.map((a,i)=> {
-            return <Card shoes = {shoes[i]} i ={i}/>
+            return <Card shoes = {shoes[i]} i ={i} key={i}/>
           })
         }
         </div>
