@@ -18,9 +18,20 @@
 ```
 - React Router는 페이지마다 다른 HTML파일이 아닌 HTML내부의 내용을 갈아치워 다른페이지처럼 보여주는 것이다. (index.html만 있음)
 - React Router는 매칭 되는 것을 다 보여준다. 예를 들어 "/detail"로 시작하면 메인페이지인 "/"까지 같이 보인다.
-    - 이럴 경우에는 ```<Route exact path="/">```처럼 exact를 넣어준다.    
+    - 이럴 경우에는 ```<Route exact path="/">```처럼 **exact**를 넣어준다.    
     
-- Component를 다른 파일에 저장해두고 import 해올 때 (Component파일명은 대문자로 시작)
+- Component가 너무 길어 다른 파일에 저장해두고 import 해올 때 (Component파일명은 대문자로 시작)
     - 그리고 상단에 ```import React```는 필수 !
+- ```<Link>```태그 사용법
+    - ```<Nav.Link> <Link to="/detail">Detail</Link> </Nav.Link>```처럼 원하는 곳에 Link태그로 감싸고 to 속성을 이용해 경로 지정
+
+- 뒤로가기 구현
+    - ```import { useHistory } from 'react-router-dom';```후 useHistoy() 메소드 사용. 예)```let history = useHistory();```
+    - ```jsx
+             <button className="btn btn-danger" onClick={()=>{
+                 history.goBack();
+              }}>뒤로가기</button> 
+      ```
+      
     
 
