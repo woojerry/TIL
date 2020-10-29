@@ -22,16 +22,19 @@
     
 - Component가 너무 길어 다른 파일에 저장해두고 import 해올 때 (Component파일명은 대문자로 시작)
     - 그리고 상단에 ```import React```는 필수 !
+
+### Link
 - ```<Link>```태그 사용법
     - ```<Nav.Link> <Link to="/detail">Detail</Link> </Nav.Link>```처럼 원하는 곳에 Link태그로 감싸고 to 속성을 이용해 경로 지정
 
 - 뒤로가기 구현
     - ```import { useHistory } from 'react-router-dom';```후 useHistoy() 메소드 사용. 예)```let history = useHistory();```
-    - ```jsx
+    - goback(), push() 메소드 활용
+    ```jsx
              <button className="btn btn-danger" onClick={()=>{
                  history.goBack();
               }}>뒤로가기</button> 
       ```
       
-    
+### Switch    
 
