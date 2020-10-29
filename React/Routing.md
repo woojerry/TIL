@@ -29,12 +29,12 @@
 
 - 뒤로가기 구현
     - ```import { useHistory } from 'react-router-dom';```후 useHistoy() 메소드 사용. 예)```let history = useHistory();```
-    - goback(), push() 메소드 활용
+    - ```goback()```,```push()``` 메소드 활용
     ```jsx
              <button className="btn btn-danger" onClick={()=>{
                  history.goBack();
               }}>뒤로가기</button> 
-      ```
+    ```    
       
 ### Switch    
 
