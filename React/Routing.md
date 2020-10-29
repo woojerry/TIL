@@ -22,6 +22,8 @@
     
 - Component가 너무 길어 다른 파일에 저장해두고 import 해올 때 (Component파일명은 대문자로 시작)
     - 그리고 상단에 ```import React```는 필수 !
+- 중요한데이터들은 무조건 App 컴포넌트에 보관
+    - 상위컴포넌트가 중요 데이터를 다 가지고 있고, 하위컴포넌트가 data를 props로 받아 쓰는 것이 좋다.
 
 ### Link
 - ```<Link>```태그 사용법
@@ -37,4 +39,16 @@
     ```    
       
 ### Switch    
-
+> 여러개의 ```<Route>```들 중 하나만 보여주고 싶을 때 사용
+    - ```<Route>```들을 ```<Switch>```태그로 감싸면 된다.
+    
+### URL Parameter
+- ```:```사용, :뒤에 마음대로 작명, 여러개 사용가능
+```jsx
+<Route path="/detail/:id">
+          <Detail shoes={shoes}/>
+        </Route>
+    </div>
+```    
+- 데이터 바인딩 시 ```useParams()```훅 사용하기
+    - ```import { useParams } from 'react-router-dom';```
