@@ -17,7 +17,7 @@
 
 - 서버에 GET요청하기 : axios.get(데이터 요청할 URL); + .then() + .catch()
 - ajax로 가져온 자료출력하는법 : ```.then((가져온자료) => { })```
-```
+```jsx
 function App(){
   let [shoes, shoes변경] = useState(Data);
   
