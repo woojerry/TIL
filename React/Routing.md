@@ -44,12 +44,15 @@
     
 ### URL Parameter
 - ```:```사용, :뒤에 마음대로 작명, 여러개 사용가능
+- 예를 들어 밑 예제에서  /detail/1234 등으로 아무거나 입력하더라도 그 <Route>태그 안에 있는 거 보여준다.
+
 ```jsx
 <Route path="/detail/:id">
           <Detail shoes={shoes}/>
         </Route>
     </div>
 ```    
+
 - 데이터 바인딩 시 ```useParams()```훅 사용하기
     - ```import { useParams } from 'react-router-dom';```
 ```jsx
