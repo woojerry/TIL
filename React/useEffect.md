@@ -43,3 +43,11 @@ class Detail2 extends React.Component {
         return function [함수명](){ 실행할 코드 } 
       });
     ```  
+- update될 때마다 useEffect()가 실행될 경우
+    - useEffect()함수 끝부분에 대괄호[]를 집어 넣고 state를 넣어준다. 
+    - 만약 []안에 아무것도 안넣으면 조건을 넣지 않은 것이므로 Component가 로드될 때 한번만 실행되는 트릭 사용 가능
+```jsx
+useEffect(()=>{
+   let 타이머 = setTimeout(()=>{ alert변경(false) }, 2000);
+}, [alert]); // alert state가 변경될 때만 실행된다.
+```
