@@ -56,7 +56,7 @@ retrun(
     2. @import : CSS 중 자주 사용하는 스타일을 저장해두고 import해올 때 사용
     ``` 
     @import './reset.scss'; // reset.scss파일 import
-    
+    ``` 
     3. nesting : CSS selector가 너무 길고 복잡할 때 대신 사용. selector해석이 쉽고 관련 class끼리 관리 용이
     ```jsx
         div.container h4 {
