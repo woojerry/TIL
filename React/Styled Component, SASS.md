@@ -46,13 +46,13 @@ retrun(
 - .css 파일이 아닌 .scss파일로 만들어준다.
 - SASS문법 사용이유
     1. 변수 사용 : 변수를 만들어 원하는 곳에서 사용, 특정 px값 %값 쉽게 사용
-    - ```jsx
+    ```jsx
       $mainColor : #ff0000;
       
       .red{
         color : %mainColor;
       }
-      ```
+    ```
     2. @import : CSS 중 자주 사용하는 스타일을 저장해두고 import해올 때 사용
     ``` 
     @import './reset.scss'; // reset.scss파일 import
