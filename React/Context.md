@@ -41,3 +41,17 @@ function App() {
     )
   }
 ```
+- 다른파일에 공유하고 싶을 때 : 똑같이 범위로 감싸고, 범위 export
+- 예) App.js에서 Detail.js로
+```jsx
+export let 재고context = React.createContext(); // export 해주기
+
+<Route path="/detail/:id">
+<재고context.Provider value={재고}> // 범위로 감싸기 + value
+  <Detail shoes={shoes} 재고 ={재고} 재고변경={재고변경}/>
+</재고context.Provider>
+</Route>
+```      
+```jsx
+import {재고 context} from '.App.js';
+```
