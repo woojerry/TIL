@@ -47,9 +47,9 @@ function App() {
 export let 재고context = React.createContext(); // export 해주기
 
 <Route path="/detail/:id">
-<재고context.Provider value={재고}> // 범위로 감싸기 + value
+ <재고context.Provider value={재고}> // 범위로 감싸기 + value
   <Detail shoes={shoes} 재고 ={재고} 재고변경={재고변경}/>
-</재고context.Provider>
+ </재고context.Provider>
 </Route>
 ```      
 ```jsx
