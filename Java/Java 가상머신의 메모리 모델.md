@@ -42,7 +42,7 @@
       String str2 = new String("Your String");
       ....
       str1 = null; // 참조 관계 관계가 끊어짐 -> 가비지 컬렉션의 대상이 된다
-      str2 = null; // 위와 마찬가지로 참조 관계 소멸
+      str2 = null; // 위와 마찬가지로 참조 관계 소멸 돼 가비지 컬렉션의 대상으로 만듦
       ...
     }
     ```
