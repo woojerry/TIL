@@ -1,1 +1,20 @@
 ## Generic
+
+- Generic 이전의 코드
+```java
+class Apple {
+ public String toString() { return "I am an apple."; }
+}
+class Orange {
+ public String toString() { return "I am an orange."; }
+}
+// 다음 상자는 사과도 오렌지도 담을 수 있다.
+class Box { // 무엇이든 저장하고 꺼낼 수 있는 상자
+ private Object ob;
+
+ public void set(Object o) { ob = o; }
+ public Object get() {return ob; }
+}
+```
+
+- 
