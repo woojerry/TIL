@@ -6,12 +6,12 @@
 - Redux 세팅
 
 - ```yarn add redux react-redux``` 또는 ```npm install redux react-redux```
-- index.js 파일에서 ```import {Provider} from 'react-redux';```로 import해오기
-- ```<Provider>```로 ```<APP>```감싸기 -> 감싸진 애들은 props없이도 state 공유가능
-- createStore()함수 사용 
+- 1. index.js 파일에서 ```import {Provider} from 'react-redux';```로 import해오기
+- 2. ```<Provider>```로 ```<APP>```감싸기 -> 감싸진 애들은 props없이도 state 공유가능
+- 3. createStore()함수 사용 
     - ```import {CreateStore} from 'redux'```
     - createStore()안에 state 저장
-- ```<Provider>```에 props전송 
+- 4. ```<Provider>```에 만든 state를 props처럼 등록 
 
 - Redux사용 이유 1. props없이 모든 컴포넌트가 state를 갖다쓸 수 있다.
-- state 데이터 사용하려면 원하는 컴포넌트에서 props로 등록하고 쓴다.
+    - state 데이터 사용하려면 원하는 컴포넌트에서 props의 형태로 등록하고 쓴다.
