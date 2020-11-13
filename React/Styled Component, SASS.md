@@ -30,7 +30,7 @@ let Title = styled.h4`
     color : ${ props => props.색상} // 백틱안에 ${} 문법 사용
 `;
 
-retrun(
+return(
 <Box>
    <Title 색상 ="blue">Hello</Title>
    <Title 색상 ={'red'}>Hello</Title>
