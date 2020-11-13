@@ -27,7 +27,7 @@ retrun(
 ```jsx
 let Title = styled.h4`
     font-size : 25px;  
-    color : ${ props => propss.색상} // 백틱안에 ${} 문법 사용
+    color : ${ props => props.색상} // 백틱안에 ${} 문법 사용
 `;
 
 retrun(
