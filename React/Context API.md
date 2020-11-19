@@ -2,9 +2,10 @@
 > 모든 하위 컴포넌트들이 props 없이도 state를 사용가능하게 만들어주는 문법
 - 간단한 데이터 전송은 props가 더 편하다. 컴포넌트가 여러개 중첩돼있는 경우에 사용
 ```
-1. React.createContext()로 범위 생성
+1. React.createContext()로 같은 변수값을 공유할 범위 생성
 2. 값 공유를 원하는 HTML을 <범위.Provider>로 감싸고 value={공유원하는값}
 3. useContext훅을 사용해 공유된 값 사용하기
+   - useContext(범위이름)
 ```
 ```jsx
 import React, { useState, useContext } from 'react';
