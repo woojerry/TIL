@@ -42,8 +42,8 @@ function App() {
     )
   }
 ```
-- 다른파일에 공유하고 싶을 때 : 똑같이 범위로 감싸고, 범위 export
-- 예) App.js에서 Detail.js로
+- 다른파일에 공유하고 싶을 때 : 똑같이 범위로 감싸고, 범위 export 하고 사용하고 싶은 파일에서 import해주기
+- 예) App.js에서 Detail.js로 -> App.js에서 export하고 Detail.js에서 import해서 사용
 ```jsx
 export let 재고context = React.createContext(); // export 해주기
 
@@ -53,6 +53,7 @@ export let 재고context = React.createContext(); // export 해주기
  </재고context.Provider>
 </Route>
 ```      
+
 ```jsx
-import {재고 context} from '.App.js';
+import {재고 context} from './App.js';
 ```
