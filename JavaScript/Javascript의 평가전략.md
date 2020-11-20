@@ -49,9 +49,9 @@ changeName(me); // caller
 
 console.log(me); // { name: 'Joo'} 
 
-// me의 참조값이 전달되어 me와 person는 같은 참조값을 가지게 되어 변화 ?
+// me의 참조값이 전달되어 me와 person는 같은 참조값을 가지게 되어 변화 ? -> X
 ```
-```
+```js
 const me = {
   name: 'Jimmy'
 };
@@ -65,6 +65,13 @@ console.log(me); // { name: 'Jimmy' }
 changeName(me); // caller
 
 console.log(me); // 정답은? -> Jimmy
+// me에서 person으로 넘길 떄 참조값은 복사되어 넘어가고 
+따라서 인수인 person은 복사된 참조값을 가지고 있고 같은 객체를 가지고 있다.
+같은 참조값을 갖고 있었으나  다른 객체를 참조하게 된다 ??
+```
+
+```js
+변수가 가리키는 메모리 공간에 저장되어 있는 값을 복사하여 전달한다는 관점에서 바라볼 때 자바스크립트는 항상 값에 의한 전달(Call By Value)만 존재
 ```
 
 
