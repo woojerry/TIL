@@ -3,7 +3,7 @@
 - 이 중간에 중간중간 Hook을 걸 수 있다.
 - 예를 들어 <Title> Component 등장 전/ 사라지기 전/ 업데이트 후 에 Hook을 활용해 어떤 동작 지시 가능
 
-- 가장 유용한 Hook ```componentDidMount()``` ```componentWillUnmount()```
+- 가장 유용한 Hook ```componentDidMount()``` ```componentWillUnmount()``` => 예전 방식
 ```
 class Detail2 extends React.Component {
   componentDidMount(){
