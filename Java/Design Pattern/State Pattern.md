@@ -59,6 +59,9 @@ public class GumballMachine {
 > 상태를 코드 -> 클래스화 , 각각의 상태를 하나의 인터페이스 밑에 두어 관리  
 > 상태에 따른 함수에서 다른 상태로 setState를 바꿔주기도 한다.
 
+![state2](https://user-images.githubusercontent.com/50645183/100465702-2633ca00-3113-11eb-953f-46b3255b33c4.PNG)
+
+
 
 ![state](https://user-images.githubusercontent.com/50645183/100464886-bd981d80-3111-11eb-8780-bb9b3db7fae6.PNG)
 
