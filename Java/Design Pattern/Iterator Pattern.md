@@ -20,6 +20,9 @@
     - ```hasNetxt(), next()```만 구현
     - 각각의 메뉴에서 Iterator를 implement하고, 각각 createIterator() 생성한다.
     - 데이터를 접근할 때, Waitress가 Iterator를 통해 이루어진다. 
+    
+![iterator](https://user-images.githubusercontent.com/50645183/100535527-204a0000-325d-11eb-8f24-f68a88b09550.PNG)
+    
   
 ```java
 public interface Iterator {
