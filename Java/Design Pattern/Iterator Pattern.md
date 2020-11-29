@@ -13,4 +13,55 @@
   - ``` hasNext(), next(), remove()``` 사용 가능
 
 
-- 아침메뉴인 pancake는 ArrayList로 되어있고, 점심메뉴는 array로 되어있다. 이걸로 통합 메뉴판을 만들려고 한다.
+- 아침메뉴인 pancake는 ArrayList로 되어있고, 저녁메뉴는 array로 되어있다. 이걸로 통합 메뉴판을 만들려고 한다. -> iterator 사용 but
+  배열에 대해서는 iteator가 없으므로 **직접** 만들어야한다.
+    - ```hasNetxt(), next()```만 구현
+    - 각각의 메뉴에서 Iterator를 implement하고, 각각 createIterator() 생성한다.
+    
+
+```java
+public interface Iterator {
+	boolean hasNext();
+	Object next();
+}
+```
+```java
+public class DinerMenuIterator implements Iterator {
+  
+  ...
+ 
+  public Iterator createIterator() { // Diner Menu에 새로 생김
+      return new DinerMenuIterator(menuItems);
+  }
+} 
+```
+```java
+public class PancakeHouseMenu implements Menu {
+  public Iterator createIterator() { // Pancake Menu에 새로 생김
+      return new PancakeHouseMenuIterator(menuItems);
+  }
+}
+```
+```java
+public class Waitress {
+  
+  ...
+  public void printMenu() { 
+      Iterator pancakeIterator = pancakeHouseMenu.createIterator();
+      Iterator dinerIterator = dinerMenu.createIterator();
+
+      System.out.println("MENU\n----\nBREAKFAST");
+      printMenu(pancakeIterator);
+      System.out.println("\nLUNCH");
+      printMenu(dinerIterator);
+  }
+  private void printMenu(Iterator iterator) {
+      while (iterator.hasNext()) {
+        MenuItem menuItem = (MenuItem)iterator.next();
+        System.out.print(menuItem.getName() + ", ");
+        System.out.print(menuItem.getPrice() + " -- ");
+        System.out.println(menuItem.getDescription());
+		}
+  }
+}
+```  
