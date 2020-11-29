@@ -31,8 +31,10 @@ public interface Iterator {
 }
 ```
 ```java
-public class DinerMenuIterator implements Iterator {
-  
+public class DinerMenu implements Menu {
+  static final int MAX_ITEMS = 6;
+  int numberOfItems = 0;
+  MenuItem[] menuItems;
   ...
  
   public Iterator createIterator() { // Diner Menu에 새로 생김
