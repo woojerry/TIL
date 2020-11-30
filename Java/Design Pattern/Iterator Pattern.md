@@ -90,5 +90,15 @@ public class Waitress {
 
 
 출처: https://jusungpark.tistory.com/25 [정리정리정리]
+<hr>
+
+## CafeMenu까지 추가 됐을 때,
+> CafeMenu는 Hashtable의 자료형, key/MenuItem 중 MenuItem가져와 Iterator로 통합해 사용
+
+![collection22](https://user-images.githubusercontent.com/50645183/100579710-075a5100-3328-11eb-9abc-90f5a11f5111.jpg)
 
 
+
+- Collection에 속하는 것들은 다 iterator 사용 가능. (array, 즉 배열은 직접 구현해줘야한다)
+- Map은 아니다.
+	- map.keySet()이 리턴하는 게 set -> Collection
