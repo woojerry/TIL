@@ -102,3 +102,152 @@ public class Waitress {
 - Collection에 속하는 것들은 다 iterator 사용 가능. (array, 즉 배열은 직접 구현해줘야한다)
 - Map은 아니다.
 	- map.keySet()이 리턴하는 게 set -> Collection
+
+<hr>
+## Composite Pattern
+> recursive한 자료구조에 사용. Tree Structrue처럼 계층구조를 가지고 있는 모든 object들을 동일시하게 하는 패턴.
+
+![composite](https://user-images.githubusercontent.com/50645183/101358515-4e26e880-38de-11eb-92fc-80870b7ec7ea.PNG)
+- 
+- print될 때 각각 클래스에서 자기 자신을 print하고, child에 있는것도 print한다.
+
+```java
+public abstract class MenuComponent {
+   
+	public void add(MenuComponent menuComponent) { // MenuComponent가 들어감
+		throw new UnsupportedOperationException();
+	}
+	public void remove(MenuComponent menuComponent) { // MenuComponent가 들어감
+		throw new UnsupportedOperationException();
+	}
+	public MenuComponent getChild(int i) {
+		throw new UnsupportedOperationException();
+	}
+  
+	public String getName() {
+		throw new UnsupportedOperationException();
+	}
+	public String getDescription() {
+		throw new UnsupportedOperationException();
+	}
+	public double getPrice() {
+		throw new UnsupportedOperationException();
+	}
+	public boolean isVegetarian() {
+		throw new UnsupportedOperationException();
+	}
+  
+	public void print() {
+		throw new UnsupportedOperationException();
+	}
+}
+```
+```java
+import java.util.Iterator;
+import java.util.ArrayList;
+
+public class Menu extends MenuComponent {
+	ArrayList menuComponents = new ArrayList(); // Menu에는 여러 child가 있으므로
+	String name;
+	String description;
+  
+	public Menu(String name, String description) {
+		this.name = name;
+		this.description = description;
+	}
+ 
+	public void add(MenuComponent menuComponent) { // 들어오고 나가는거 MenuComponent
+		menuComponents.add(menuComponent);
+	}
+ 
+	public void remove(MenuComponent menuComponent) { // 들어오고 나가는거 MenuComponent	
+		menuComponents.remove(menuComponent);
+	}
+ 
+	public MenuComponent getChild(int i) {
+		return (MenuComponent)menuComponents.get(i);
+	}
+ 
+	public String getName() {
+		return name;
+	}
+ 
+	public String getDescription() {
+		return description;
+	}
+ 
+	public void print() { // print될 때 각각 클래스에서 자기 자신을 print하고, child에 있는것도 print한다.
+		System.out.print("\n" + getName());
+		System.out.println(", " + getDescription());
+		System.out.println("---------------------");
+  
+		Iterator iterator = menuComponents.iterator(); // child에 있는걸 iterator로 해서
+		while (iterator.hasNext()) {
+			MenuComponent menuComponent = 
+				(MenuComponent)iterator.next();
+			menuComponent.print(); // print함 
+		}
+	}
+}
+```
+```java
+import java.util.Iterator;
+import java.util.ArrayList;
+
+public class MenuItem extends MenuComponent {
+	String name;
+	String description;
+	boolean vegetarian;
+	double price;
+    
+	public MenuItem(String name, 
+	                String description, 
+	                boolean vegetarian, 
+	                double price) 
+	{ 
+		this.name = name;
+		this.description = description;
+		this.vegetarian = vegetarian;
+		this.price = price;
+	}
+  
+	public String getName() {
+		return name;
+	}
+  
+	public String getDescription() {
+		return description;
+	}
+  
+	public double getPrice() {
+		return price;
+	}
+  
+	public boolean isVegetarian() {
+		return vegetarian;
+	}
+  
+	public void print() { // 여기서 recursive 끝남
+		System.out.print("  " + getName());
+		if (isVegetarian()) {
+			System.out.print("(v)");
+		}
+		System.out.println(", " + getPrice());
+		System.out.println("     -- " + getDescription());
+	}
+}
+```
+```java
+import java.util.Iterator;
+  
+public class Waitress { // Waitress는 allMenu 받아다가
+	MenuComponent allMenus;
+ 
+	public Waitress(MenuComponent allMenus) {
+		this.allMenus = allMenus;
+	}
+ 
+	public void printMenu() { // printMenu만 하면 recursive한 구조로 모든게 print된다.
+		allMenus.print();
+	}
+}
