@@ -7,7 +7,8 @@
  바라보는 기준이 함수냐 인자냐에 따라 사용하는 인자가 다른 것이고 큰 틀에서는 같은 의미다. 
 ```
 - **JS는 자료형에 따라 call by value인지, call by reference인지 나뉜다.**
-- **자료형을 크게 기본 타입/ 객체로 나눠서 보면 전자는 Call by Value, 후자는 Call by Reference이다. 
+- **자료형을 크게 기본 타입/ 객체로 나눠서 보면 전자는 Call by Value, 후자는 Call by Reference이다.**
+- 따라서 React에서 Object등을 사용할 때는 call by reference이므로 새로운 변수를 만들어 deep copy 해주는 것이다.
 
 ## Call by Value
 ```js
