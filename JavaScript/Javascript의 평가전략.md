@@ -6,9 +6,10 @@
  Pass는 인자를 전달한다는 의미를 나타내는 동사이다.
  바라보는 기준이 함수냐 인자냐에 따라 사용하는 인자가 다른 것이고 큰 틀에서는 같은 의미다. 
 ```
+- **JS는 자료형에 따라 call by value인지, call by reference인지 나뉜다.**
+- **자료형을 크게 기본 타입/ 객체로 나눠서 보면 전자는 Call by Value, 후자는 Call by Reference이다. 
 
 ## Call by Value
-- JavaSrcipt는 일단 **Call by Value**다
 ```js
 Call by Value의 특징
 1. argument로 값이 넘어온다.
