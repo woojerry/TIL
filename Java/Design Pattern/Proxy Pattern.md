@@ -22,12 +22,9 @@ public class GumballMonitor {
 		System.out.println("Current state: " + machine.getState());
 	}
 }
-
-![proxy3](https://user-images.githubusercontent.com/50645183/101982960-d29cb100-3cba-11eb-994b-0551c59a9fdd.PNG)
-
 ```
-
 <hr>
+
 ## Java RMI 
 > Remote Proxy
 1. Remote Interface 설계 (외부에 제공되는 서비스에 대해 interface 
@@ -100,4 +97,74 @@ public class MyRemoteClient {
    }
 }
 ```
+<hr>
 
+![proxy3](https://user-images.githubusercontent.com/50645183/101982960-d29cb100-3cba-11eb-994b-0551c59a9fdd.PNG)
+
+```java
+public interface GumballMachineRemote extends Remote { // 원격제어
+	public int getCount() throws RemoteException;
+	public String getLocation() throws RemoteException;
+	public State getState() throws RemoteException;
+}
+```
+```java
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+	State soldOutState;
+	State noQuarterState;
+	State hasQuarterState;
+	State soldState;
+	State winnerState;
+ 
+	State state = soldOutState;
+	int count = 0;
+ 	String location;
+
+	public GumballMachine(String location, int numberGumballs) throws RemoteException {
+		soldOutState = new SoldOutState(this);
+		noQuarterState = new NoQuarterState(this);
+		hasQuarterState = new HasQuarterState(this);
+		soldState = new SoldState(this);
+		winnerState = new WinnerState(this);
+
+		this.count = numberGumballs;
+ 		if (numberGumballs > 0) {
+			state = noQuarterState;
+		} 
+		this.location = location;
+	}
+	public int getCount() {
+		return count;
+	}
+ 
+    	public State getState() {
+        return state;
+    	}
+ 
+   	 public String getLocation() {
+        return location;
+    	}
+	
+	...
+	// other codes
+}	
+```
+```java
+public class GumballMonitor {
+	GumballMachineRemote machine;
+ 
+	public GumballMonitor(GumballMachineRemote machine) {
+		this.machine = machine;
+	}
+ 
+	public void report() {
+		try {
+			System.out.println("Gumball Machine: " + machine.getLocation());
+			System.out.println("Current inventory: " + machine.getCount() + " gumballs");
+			System.out.println("Current state: " + machine.getState());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
