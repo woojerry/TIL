@@ -63,7 +63,6 @@ public class GumballMachine {
 ![state2](https://user-images.githubusercontent.com/50645183/100465702-2633ca00-3113-11eb-953f-46b3255b33c4.PNG)
 
 
-
 ![state](https://user-images.githubusercontent.com/50645183/100464886-bd981d80-3111-11eb-8780-bb9b3db7fae6.PNG)
 
 
@@ -81,7 +80,7 @@ public interface State {
 ```
 
 ```java
-public class GumballMachine {
+public class GumballMachine { // ** client가 insertQuarter()시키면 state.insertQuarter() 실행 (현재 상태로)
  
 	State soldOutState;
 	State noQuarterState;
@@ -180,4 +179,76 @@ public class NoQuarterState implements State {
  ```
 
 참고 <https://lee1535.tistory.com/100>
+
+<hr>
+
+## Winner 상태 추가
+- Winnter State가 새로 추가되고, HasQuarterState의 turnCrank(), GumballMachine만 변화시키면 된다. 나머지는 변화 X
+
+```java
+package headfirst.state.gumballstatewinner;
+
+public class WinnerState implements State {
+    GumballMachine gumballMachine;
+ 
+    public WinnerState(GumballMachine gumballMachine) {
+        this.gumballMachine = gumballMachine;
+    }
+ 
+	public void insertQuarter() { // 수행X
+		System.out.println("Please wait, we're already giving you a Gumball");
+	}
+ 
+	public void ejectQuarter() { // 수행X
+		System.out.println("Please wait, we're already giving you a Gumball");
+	}
+ 
+	public void turnCrank() { // 수행X
+		System.out.println("Turning again doesn't get you another gumball!");
+	}
+ 
+	public void dispense() { // dispense()만 수행가능
+		System.out.println("YOU'RE A WINNER! You get two gumballs for your quarter");
+		gumballMachine.releaseBall();
+		if (gumballMachine.getCount() == 0) {
+			gumballMachine.setState(gumballMachine.getSoldOutState());
+		} else {
+			gumballMachine.releaseBall();
+			if (gumballMachine.getCount() > 0) {
+				gumballMachine.setState(gumballMachine.getNoQuarterState());
+			} else {
+            	System.out.println("Oops, out of gumballs!");
+				gumballMachine.setState(gumballMachine.getSoldOutState());
+			}
+		}
+	}
+ 
+	public String toString() {
+		return "despensing two gumballs for your quarter, because YOU'RE A WINNER!";
+	}
+}
+```
+```java
+public class HasQuarterState implements State { // HasQuarter에서 추가되거나 바뀐 부분 
+	Random randomWinner = new Random(System.currentTimeMillis()); // Random 함수 
+	...
+	public void turnCrank() {
+		System.out.println("You turned...");
+		int winner = randomWinner.nextInt(10); 
+		if ((winner == 0) && (gumballMachine.getCount() > 1)) { // 0일때를 winner로 설정
+			gumballMachine.setState(gumballMachine.getWinnerState());
+		} else {
+			gumballMachine.setState(gumballMachine.getSoldState());
+		}
+	}
+}	
+
+- GumballMachine에서도 WinnerState만 추가
+```java
+winnerState = new WinnerState(this);
+
+ public State getWinnerState() {
+        return winnerState;
+    }
+```
 
