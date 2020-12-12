@@ -22,15 +22,22 @@ public class GumballMonitor {
 		System.out.println("Current state: " + machine.getState());
 	}
 }
+
+![proxy3](https://user-images.githubusercontent.com/50645183/101982960-d29cb100-3cba-11eb-994b-0551c59a9fdd.PNG)
+
 ```
 
 <hr>
 ## Java RMI 
+> Remote Proxy
 1. Remote Interface 설계 (외부에 제공되는 서비스에 대해 interface 
 2. Remote Implementation 
 3. generate stub(client쪽의 proxy), skeleton(service쪽 proxy) using rmic
 4. start the RMI registry
 5. start the remote service
+
+![proxy2](https://user-images.githubusercontent.com/50645183/101982945-bd278700-3cba-11eb-8819-779281b09290.PNG)
+
 
 ### 1
 ```java
@@ -50,6 +57,14 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote { // �
 }
 ```
 
+### 4
+```java
+try {
+     MyRemote service = new MyRemoteImpl( );
+     Naming.rebind (“RemoteHello”, service);
+} catch (Exception ex) { … }
+```
+
 ```java
 import java.rmi.*;   
 import java.rmi.server.*; // UnicastRemoteObject가 들어 있다.
@@ -58,7 +73,7 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
        return “Server says, ‘Hey’”;
     }
     public MyRemoteImple( ) throws RemoteException { }
-    public static void main(String[ ] args) {
+    public static void main(String[ ] args) { / main에서
        try {
 	   MyRemote service = new MyRemoteImpl( );
 	   Naming.rebind(“RemoteHello”, service);  //rmiregistry에 결합시킴
@@ -66,6 +81,23 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
 	   ex.printStackTrace();
     }   
   }   
+}
+```
+```java
+import java.rmi.*;  // (RMI 레지스트리 룩업을 처리하기 위한) Naming 클래스가 존재
+public class MyRemoteClient {
+    public static void main (String[ ] args) {
+       new MyRemoteClient( ).go( );
+    }
+    public void go( ) {
+      try {
+        MyRemote service=(MyRemote)Naming.lookup(“rmi://127.0.0.1/RemoteHello”);
+        String s = service.sayHello(); // stub의 sayHello(), 원격의 myRemote의 sayHello() 호출
+        System.out.println(s);
+      } catch (Exception ex) {
+        ex.printStackTrace( );
+      }
+   }
 }
 ```
 
