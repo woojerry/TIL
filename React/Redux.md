@@ -72,3 +72,24 @@ let store = createStore(reducer);
     <button onClick={()=>{props.dispatch({type: '수량감소'})}}>-</button>
 </td> 
 ```                      
+
+## Reducer 여러개 쓰기
+> combineReducers로 reducer여러개 일 때 사용
+- ```import { combineReducers, createStore} from 'redux';```해주기
+```jsx
+let store = createStore(combineReducers({reducer, reducer2}));
+```
+```jsx
+function state를props화(state) { // store안에 있던 데이터 가져와 props로 만들어줌
+    //console.log(state);
+    return{
+     state : state.reducer,
+     alert열렸니 : state.reducer2 // 여기도 수정
+    }
+}
+```
+export default connect(state를props화)(Cart)
+
+- Redux에 저장하는 것은 한 컴포넌트에서만 쓰는 것에서는 사용X, 그럴 경우useState()사용하는게 낫다.
+
+
