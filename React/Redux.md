@@ -87,9 +87,9 @@ function state를props화(state) { // store안에 있던 데이터 가져와 pro
      alert열렸니 : state.reducer2 // 여기도 수정
     }
 }
-```
-export default connect(state를props화)(Cart)
 
+export default connect(state를props화)(Cart)
+```
 - Redux에 저장하는 것은 한 컴포넌트에서만 쓰는 것에서는 사용X, 그럴 경우useState()사용하는게 낫다.
 
 
