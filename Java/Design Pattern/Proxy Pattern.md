@@ -1,6 +1,8 @@
 ## Proxy Pattern
 > 어떤 클래스의 객체 생성이 오래 걸리는 경우 그 일을 분업을 하여 proxy 클래스에서 처리 할 수 있는 부분은 처리를 하고 proxy 클래스에서 처리 할 수 없는 작업에 대해서만 실제 클래스의 객체를 생성하고 위임하는 방식
 
+
+## Remote Proxy
 - GumballMonitor ----- GumballMachine 사이에 getLocation(), getCount(), getState()를 한다.
 - 하지만 다른 컴퓨터에서 이를 각각 돌리려고할 때는 문제 발생 -> 새로운 방법으로 호출 필요 -> 중간 역할 Proxy
 - Interface를 통해 외부에 어떤 서비스를 제공할지 알려준다.
@@ -199,5 +201,43 @@ public class GumballMonitorTestDrive {
             	e.printStackTrace();
         	}
 	}	
+}
+```
+<hr>
+## Virtual Proxy
+> 대리자 역할 수행
+> 간단한 역할은 proxy가 수행하다가, 실제 자세한 작업부터는 그 객체 호출
+
+![proxy123](https://user-images.githubusercontent.com/50645183/102049241-dc8df380-3e23-11eb-8765-29cf5870d2d4.PNG)	
+
+```java
+class ImageProxy implements Icon {
+	ImageIcon imageIcon;
+	URL imageURL;
+	Thread retrievalThread;
+	boolean retrieving = false;
+     
+	public ImageProxy(URL url) { imageURL = url; }
+     
+	public int getIconWidth() {
+		if (imageIcon != null) {
+            return imageIcon.getIconWidth(); // image가 만들어지면 
+        } else {
+			return 800; // image 없을 때는 이 작업 수행
+		}
+	}
+ 
+	public int getIconHeight() {
+		if (imageIcon != null) {
+            return imageIcon.getIconHeight(); // image가 만들어지면
+        } else {
+			return 600; // image 없을 때는 이 작업 수행
+		}
+	}
+     
+	public void paintIcon(final Component c, Graphics  g, int x,  int y) {
+		if (imageIcon != null) {
+			imageIcon.paintIcon(c, g, x, y); // Image Icon이 있을 때 이 작업 수행
+		} else { ... }
 }
 ```
