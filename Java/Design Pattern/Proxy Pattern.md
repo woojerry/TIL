@@ -109,7 +109,7 @@ public interface GumballMachineRemote extends Remote { // 원격제어
 }
 ```
 ```java
-public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote { // implements **
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
