@@ -150,11 +150,11 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
 }	
 ```
 ```java
-public class GumballMonitor {
+public class GumballMonitor { // **
 	GumballMachineRemote machine;
  
 	public GumballMonitor(GumballMachineRemote machine) {
-		this.machine = machine;
+		this.machine = machine; 
 	}
  
 	public void report() {
