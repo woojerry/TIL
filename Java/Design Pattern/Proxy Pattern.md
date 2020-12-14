@@ -204,7 +204,9 @@ public class GumballMonitorTestDrive {
 }
 ```
 <hr>
+
 ## Virtual Proxy
+
 > 대리자 역할 수행
 > 간단한 역할은 proxy가 수행하다가, 실제 자세한 작업부터는 그 객체 호출
 
