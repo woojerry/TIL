@@ -251,6 +251,7 @@ winnerState = new WinnerState(this);
         return winnerState;
     }
 ```
+
 ```java
 package headfirst.state.gumballstatewinner;
 
