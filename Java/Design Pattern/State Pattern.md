@@ -242,8 +242,10 @@ public class HasQuarterState implements State { // HasQuarter에서 추가되거
 		}
 	}
 }	
+```
 
 - GumballMachine에서도 WinnerState만 추가
+
 ```java
 winnerState = new WinnerState(this);
 
