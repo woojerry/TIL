@@ -104,7 +104,9 @@ public class Waitress {
 	- map.keySet()이 리턴하는 게 set -> Collection
 
 <hr>
+
 ## Composite Pattern
+
 > recursive한 자료구조에 사용. Tree Structrue처럼 계층구조를 가지고 있는 모든 object들을 동일시하게 하는 패턴.
 
 ![composite](https://user-images.githubusercontent.com/50645183/101358515-4e26e880-38de-11eb-92fc-80870b7ec7ea.PNG)
