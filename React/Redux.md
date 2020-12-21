@@ -95,6 +95,7 @@ export default connect(state를props화)(Cart)
 ## dispatch로 수정요청할 때 데이터 보내기
 ```dispatch({type: '[type명]', payload: [보낼Data] })```
 - 보낸 자료는 action parameter에 저장되어있다.
+- reducer의 action parameter는 dispatch()할 때 보낸 object다.
 
 
 
