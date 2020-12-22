@@ -38,7 +38,7 @@ function Hello({ color, name }) {
 export default Hello;
 ```
 
-### defaultProps
+### DefaultProps
 
 > 컴포넌트에 props 를 지정하지 않았을 때 기본적으로 사용 할 값을 설정하고 싶을 때 사용
 
@@ -69,8 +69,22 @@ export default Hello;
 
 ![image](https://user-images.githubusercontent.com/50645183/102776120-8562c280-43d1-11eb-8064-49c5260a052c.png)
 
-### props.children
+### Props.children
 > 값을 사용하는 곳에서 값을 정하는 것
+```jsx
+// 이 경우 Hello가 보인다.
+import "./App.css";
+const Container = (props) => <div className="container">{props.children}</div>;
+function App() {
+	return (
+		<Container>
+			<div>Hello</div>
+		</Container>
+	);
+}
+export default App;
+```
+
 
 ```jsx
 import React from "react"; // App.js
@@ -119,3 +133,4 @@ function Wrapper({ children }) {
 
 export default Wrapper;
 ```
+
