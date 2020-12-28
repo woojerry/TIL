@@ -55,5 +55,5 @@ export let 재고context = React.createContext(); // export 해주기
 ```      
 
 ```jsx
-import {재고 context} from './App.js';
+import {재고context} from './App.js';
 ```
