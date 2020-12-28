@@ -17,7 +17,8 @@ function InputTest() {
   
   const onRest = () => {
     setText('');
-    nameInput.current.focus(); //Ref 객체의 current 값은 선택하고자 하는 DOM을 가리킨다.
+    nameInput.current.focus(); // Ref 객체의 current 값은 선택하고자 하는 DOM을 가리킨다.
+                               // DOM API focus()호출해 포커싱한다.
   };  
   
   return (
@@ -42,3 +43,37 @@ function InputTest() {
 ```
 
 - useRef로 Component 안의 변수 관리하기
+- useRef Hook의 다른 기능으로 컴포넌트 안에서 조회 및 수정 가능한 변수를 관리할 수 있다.
+- useRef로 변수를 관리해 그 변수가 업데이트 된다고 그 컴포넌트가 재렌더링이 되지 않으므로 재렌더링 할 필요가 없을 때 useRef로 관리하는게 효율적이다.
+- 주로 id, key값을 관리할 때 사용한다.
+```jsx
+import React, { useRef } from 'react'; // App.js
+import UserList from './userList';
+
+function App() {
+  const users = [
+    {
+      id: 1,
+      username: 'woo',
+      email: 'woojerry@naver.com'
+    },
+    {
+      id: 2,
+      username: 'pop',
+      email: 'pop@gmail.com'
+    }
+  ];
+
+  const nextId = useRef(3); // 배열의 고유값 변수로 nextID설정 
+                            // useRef() 파라미터로 다음 id가 될 숫자 4를 넣어준다.
+  const onCreate = () => {
+    // 배열에 새로운 항목 추가하는 로직
+
+    nextId.current += 1;  .. 파라미터 값을 넣어주면 해당 값이 변수의 current값이 된다.
+  };
+  return <UserList users={users} />;
+}
+export default App;
+```
+
+참고 <https://xiubindev.tistory.com/98>
