@@ -69,7 +69,8 @@ function App() {
   const onCreate = () => {
     // 배열에 새로운 항목 추가하는 로직
 
-    nextId.current += 1;  .. 파라미터 값을 넣어주면 해당 값이 변수의 current값이 된다.
+    nextId.current += 1;  //.. 파라미터 값을 넣어주면 해당 값이 변수의 current값이 된다.
+                          // .current값은 우리가 원하는 DOM을 가르키게 한다.
   };
   return <UserList users={users} />;
 }
