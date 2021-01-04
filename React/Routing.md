@@ -31,12 +31,20 @@
 
 - 뒤로가기 구현
     - ```import { useHistory } from 'react-router-dom';```후 useHistoy() 메소드 사용. 예)```let history = useHistory();```
-    - ```goback()```,```push()``` 메소드 활용
+    - ```goback()```, ```push()``` 메소드 활용
     ```jsx
              <button className="btn btn-danger" onClick={()=>{
                  history.goBack();
               }}>뒤로가기</button> 
     ```    
+    ```jsx
+    <div
+      className="col-md-4"
+      onClick={() => {
+        history.push("/detail/" + props.shoes.id); // 원하는 페이지로 이동
+      }}
+    >
+    ```
       
 ### Switch    
 > 여러개의 ```<Route>```들 중 규칙이 일치하는 라우트 단 하나만 보여주고 싶을 때 사용
