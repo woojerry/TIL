@@ -33,16 +33,16 @@ http.listen(8080, function () {
   console.log("listening on 8080");
 });
 
+// 미들웨어로 HTML,CSS, img, js 파일들 담긴 곳 명시
+app.use(express.static(path.join(__dirname, "public")));
+
 // HTML파일 보내는법
 app.get("/", (req, res) => {
   // req는 요청 , res는 응답
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 ```
-```js
-// 미들웨어로 HTML,CSS, img, js 파일들 담긴 곳 명시
-app.use(express.static(path.join(__dirname, "public")));
-```
+
 <hr>
 
 ## Express + React
