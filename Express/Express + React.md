@@ -19,7 +19,7 @@ app.listen(port, () => {
 - 그 다음 터미널에 ```npm init```
 - ```npm install express --save```
 - ```node server.js```로 서버 작동
-```js
+```
 
 ```js
 //  express library 첨부
@@ -32,7 +32,7 @@ const http = require("http").createServer(app);
 http.listen(8080, function () {
   console.log("listening on 8080");
 });
-```
+
 // HTML파일 보내는법
 app.get("/", (req, res) => {
   // req는 요청 , res는 응답
