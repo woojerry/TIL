@@ -3,7 +3,7 @@
 ```import {memo} from 'react';```
 
 - 원래 코드
-``jsx
+```jsx
 function Child2(){
   useEffect( ()=>{ console.log('렌더링됨2') } );
   return <div>2222</div>
