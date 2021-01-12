@@ -19,7 +19,7 @@ app.listen(port, () => {
 - 그 다음 터미널에 ```npm init```
 - ```npm install express --save```
 - ```node server.js```로 서버 작동
-```
+
 
 ```js
 //  express library 첨부
