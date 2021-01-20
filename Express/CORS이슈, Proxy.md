@@ -8,6 +8,16 @@
 3. 백,프론트 모두 컨트롤할 수 있을 때 -> request 보낼 때 수정 
 4. Proxy 활용
 ```
+## Proxy Server
+> 유저와 인터넷 사이에 있는 것으로 IP를 임의로 바꿀 수도 있고, 보내는 데이터도 임의로 바꿀 수 있으며 방화벽, 웹 필터 기능, 캐쉬 데이터, 공유 데이터 제공 기능을 한다.
+- 사용 이유
+```jsx
+1. 회사에서 직원들이나 집안 아이들 인터넷 사용 제어
+2. 캐쉬를 이용해 더 빠른 인터넷 제공
+3. 더 나은 보안 제공
+4. 이용 제한된 사이트 접근 가능
+```
+
 ### Proxy 활용
 https://create-react-app.dev/docs/proxying-api-requests-in-development/
 1. ```npm install http-proxy-middleware --save``` or ```yarn add http-proxy-middleware```
