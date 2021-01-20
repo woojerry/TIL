@@ -97,5 +97,10 @@ export default connect(state를props화)(Cart)
 - 보낸 자료는 action parameter에 저장되어있다.
 - reducer의 action parameter는 dispatch()할 때 보낸 object다.
 
+### redux-thunk 
+> 미들웨어로 action이 object(객체)형식이 아닌 함수형식일 때 dispatch한테 function을 받는 것
+
+### redux-promise
+> 미들웨어로 action이 object(객체)형식이 아닌 promise일 때 dispatch한테 promise를 받는 것
 
 
