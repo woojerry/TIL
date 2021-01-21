@@ -15,6 +15,24 @@
 }
 ```
 
+### 액션 생성함수
+> 파라미터를 받아와 액션 객체 형태로 만들어주는, 액션을 만드는 함수
+```jsx
+export function addTodo(data) {
+  return {
+    type: "ADD_TODO",
+    data
+  };
+}
+
+// 화살표 함수로도 만들 수 있다.
+export const changeInput = text => ({ 
+  type: "CHANGE_INPUT",
+  text
+});
+```
+
+
 ### 리듀서(Reducer)
 > 변화를 일으키는 함수. 두가지의 파라미터를 받아온다.
 ```jsx
