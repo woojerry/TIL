@@ -56,3 +56,22 @@ function counter(state, action) {
 ```
 ### 스토어 (Store)
 > 리덕스에서는 한 애플리케이션당 하나의 스토어를 만들게 된다. 스토어 안에는, 현재의 앱 상태와, 리듀서가 들어가있고, 추가적으로 몇가지 내장 함수들이 있다.
+
+### 디스패치(dispatch)
+>  액션을 발생 시키는 것. 파라미터로 action을 전달
+```jsx
+ const dispatch = useDispatch();
+ const onCreate = (text) => dispatch(addTodo(text)); // addTodo(text)가 action
+```
+### 구독(subscribe)
+> 원래는 ```subscrbie```함수를 통해, 예전에는 ```connect```를 사용했으나 요즘은 ```useSelector```를 활용해 리덕스의 상태값을 조회하는 것
+```jsx
+const { number, diff } = useSelector(state => ({ // 이런식으로 하면 상태가 바뀌지 않아도 전체가 리랜더링
+    number: state.counter.number,
+    diff: state.counter.diff
+  }));
+```
+```jsx 
+const number = useSelector((state) => state.counter.number); // useSelector를 여러번 사용해 바뀐 상태의 부분만 리랜더링
+const diff = useSelector((state) => state.counter.diff);
+```
