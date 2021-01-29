@@ -34,8 +34,9 @@ getData(function(tableData) {
 - 이렇게 콜백 함수를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있다.
 
 
+<hr>
 
--다른 예제
+- 다른 예제
 
 ```js
 function print(callback) {  
