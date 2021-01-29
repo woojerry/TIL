@@ -16,7 +16,7 @@ function getData() {
 
 console.log(getData()); // undefined
 ```
-- 위 코드에서 ajax통시에 get요청을 받아오기 전에 ```console.log```가 실행되어 undefined가 출력된다.
+- 위 코드에서 ajax통신 get요청을 받아오기 전에 ```console.log```가 실행되어 undefined가 출력된다.
 - 이렇게 특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저 실행하는 것이 비동기 처리
 
 ```js
