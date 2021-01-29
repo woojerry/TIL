@@ -35,13 +35,14 @@ getData(function(tableData) {
 
 
 
+-다른 예제
+
 ```js
 function print(callback) {  
     callback();
 }
 ```
 
--다른 예제
 ```js
 function fn_fakeAsync(callback){
   calback();
