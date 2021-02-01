@@ -25,6 +25,7 @@ hello
 ```
 
 ### Asynchronous callback
+
 ```js
 console.log('1');
 setTimeout( () => console.log('2'), 1000);
@@ -40,6 +41,7 @@ function printWithDealy(print, timeout) { // Asynchronous callback
 }
 printWithDelay( () => console.log('async callback'), 2000);
 ```
+
 ```
 // 출력 결과
 1
@@ -49,6 +51,7 @@ hello
 async callback
 ```
 <hr> 
+
 ```js
 function getData() {
 	var tableData;
@@ -60,6 +63,7 @@ function getData() {
 
 console.log(getData()); // undefined
 ```
+
 - 위 코드에서 ajax통신 get요청을 받아오기 전에 ```console.log```가 실행되어 undefined가 출력된다.
 - 이렇게 특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저 실행하는 것이 비동기 처리
 
@@ -74,6 +78,7 @@ getData(function(tableData) {
 	console.log(tableData); // $.get()의 response 값이 tableData에 전달됨
 });
 ```
+
 - 이 코드는 콜백 함수로 비동기 처리 방식의 문제점 해결한 것이다.
 - 이렇게 콜백 함수를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있다.
 
