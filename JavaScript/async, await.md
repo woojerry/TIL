@@ -75,11 +75,10 @@ async function getBanana() {
 }
 
 async function pickFruits() {
-  try{
     const apple = await getApple();
     const banana = await getBanana();
     return `${apple} + ${banana}`;
-  }  
+}  
 
 pickFruits().then(console.log); // apple + banana
 ```
@@ -141,3 +140,32 @@ function pickAllFruits() {
 pickAllFruits().then(console.log); // apple + banana
 ```
 
+- async, await만 사용해 나타내기 -> async, await로 한번 더 감싸주기
+```js
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getApple() {
+  await delay(1000);
+  return 'apple';
+}
+
+async function getBanana() {
+  await delay(1000);
+  return 'banana';
+}
+
+function pickAllFruits() {
+  return Promise.all([getApple(), getBanana()]).then(fruits =>
+    fruits.join(' + ')
+  );
+}  
+
+const printFruits = async () => { 
+    result = await pickAllFruits();
+    console.log(result)
+};
+
+printFruits(); // apple + banana
+```
