@@ -162,4 +162,8 @@ createPromiseSendResume(true).then(
 ).then((response) => console.log(response))
 ```
 
+<참고> 
+- https://toycrane.medium.com/promise-%EC%A0%95%EB%A7%90-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a74b6e3c6722
+- https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
+
 
