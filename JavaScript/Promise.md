@@ -133,7 +133,7 @@ function sendResume(){
 }
 
 const createPromiseSendResume = (isTimeToSendResume) => {
-return new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
 	// 12월을 체크하는 변수
 	if(isTimeToSendResume){
 		sendResume()
