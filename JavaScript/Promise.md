@@ -44,6 +44,7 @@ new Promise(function(resolve, reject) {
 ``` 
 
 - ```resolve```는 약속을 지킬 수 있는 상황이 되었을 때, 즉 **성공**했을 때 약속을 이행하고 결과 값을 외부로 ```return```하는 함수
+- ```then()```을 이용하여 처리 결과 값을 받을 수 있다.
 ```js
 function getData() {
   return new Promise(function(resolve, reject) {
@@ -72,30 +73,9 @@ getData().then().catch(function(err) {
   console.log(err); // Error: Request is failed
 });
 ```
+<hr>
 
 ### Promise 예제
-```js
-let isTimeToSendResume = true
-function sendResume(){
-	// 이력서를 전송하는 수도 코드
-	return true
-}
-let promiseSendResume = new Promise((resolve, reject) => {
-	// 12월을 체크하는 변수
-	if(isTimeToSendResume){
-		sendResume();
-		resolve('이력서 전송 완료')
-	}else{
-		reject('아직 이력서를 전송할 때가 아닙니다.')
-	}
-})
-
-promiseSendResume.then((result) => {
-	console.log('promise resolved =>', result)
-}).catch((err) => {
-	console.log('promise rejected =>', err)
-})
-```
 ```js
 function sendResume(){
 	// 이력서를 전송하는 수도 코드
@@ -113,7 +93,17 @@ return new Promise((resolve, reject) => {
 	}
 })
 }
+```
+```js
+createPromiseSendResume(true) // Promise {<fulfilled>: "이력서 전송 완료"}
+```
+```js
+createPromiseSendResume(false) // Promise {<rejected>: "아직 12월 1일이 되지 않았습니다."}
+```
 
+<hr>
+
+```js
 function prepareInterview(){
 	// 면접을 준비하는 수도 코드
 	return true
@@ -125,6 +115,11 @@ const createPromisePrepareInterview = () => {
 })
 }
 ```
+```js
+createPromisePrepareInterview() // Promise {<fulfilled>: "면접 준비 완료"}
+```
+<hr>
+
 - 이 2개의 ```Promise``` 예제의 연결
 ```js
 function sendResume(){
@@ -159,8 +154,10 @@ const createPromisePrepareInterview = (message) => {
 
 createPromiseSendResume(true).then(
   (response) => { return createPromisePrepareInterview(response)}
-).then((response) => console.log(response))
+).then((response) => console.log(response)) // 이력서 전송 완료 -> 면접 준비 완료
 ```
+
+
 
 <참고> 
 - https://toycrane.medium.com/promise-%EC%A0%95%EB%A7%90-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a74b6e3c6722
