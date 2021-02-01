@@ -5,6 +5,50 @@
 ### 비동기적 처리
 > 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미한다
 
+### Synchronous callback
+```js
+console.log('1');
+setTimeout( () => console.log('2'), 1000);
+console.log('3');
+
+function printImmediately(print) { // Synchronous callback
+  print();
+}
+printImmediately( () => console.log('hello')); 
+```
+```js
+// 출력 결과
+1
+3
+hello
+2
+```
+
+### Asynchronous callback
+```js
+console.log('1');
+setTimeout( () => console.log('2'), 1000);
+console.log('3');
+
+function printImmediately(print) { // Synchronous callback
+  print();
+}
+printImmediately( () => console.log('hello')); 
+
+function printWithDealy(print, timeout) { // Asynchronous callback
+	setTimeout(print, timeout);
+}
+printWithDelay( () => console.log('async callback'), 2000);
+```
+```
+// 출력 결과
+1
+3
+hello
+2
+async callback
+```
+<hr> 
 ```js
 function getData() {
 	var tableData;
@@ -34,32 +78,3 @@ getData(function(tableData) {
 - 이렇게 콜백 함수를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있다.
 
 
-<hr>
-
-- 다른 예제
-
-```js
-function print(callback) {  
-    callback();
-}
-```
-
-```js
-function fn_fakeAsync(callback){
-  calback();
-}
-
-console.log("------- fn_fakeAsync 호출 직전 -------");
-
-fn_fakeAsync(function(){
-  console.log("이게 비동기적으로 동작하길 바래");
-});
-
-console.log("------- fn_fakeAsync 호출 이후 -------");
-```
-- 결과
-```
-------- fn_fakeAsync 호출 직전 -------
-이게 비동기적으로 동작하길 바래
-------- fn_fakeAsync 호출 이후 ------
-```
