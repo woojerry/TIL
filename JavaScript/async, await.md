@@ -2,6 +2,7 @@
 > async와 await는 자바스크립트의 비동기 처리 패턴 중 가장 최근에 나온 문법으로 기존의 비동기 처리 방식인 콜백 함수와 프로미스의 단점을 보완하고 개발자가 읽기 좋은 코드를 작성할 수 있게 도와준다.
 
 ### Async
+> ```async``` 함수는 Promise를 기반으로 하고 있으며, 좀 더 syncronous한 형식으로 promise를 사용할 수 있도록 도와준다.
 
 - 원래 Promise 코드
 ```js
@@ -31,6 +32,7 @@ user.then(console.log); // woojerry
 
 ### Await
 > ```await```는 반드시 ```async``` 내에서만 사용이 가능하다.
+- ```await```는 Promise를 기다리는 명령어이다. 즉, Promise가 완료될 때까지 기다렸다가 다음 코드를 실행한다.
 - 원래 Promise 코드
 
 ```js
