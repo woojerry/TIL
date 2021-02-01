@@ -30,7 +30,7 @@ user.then(console.log); // woojerry
 ```
 
 ### Await
-
+> ```await```는 반드시 ```async``` 내에서만 사용이 가능하다.
 - 원래 Promise 코드
 
 ```js
