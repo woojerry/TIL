@@ -6,4 +6,4 @@
 ### 2. JSX를 통한 컴포넌트에 데이터바인딩 하기가 쉬워짐
 ### 3. State 사용해 ( 변경시 자동 re-rendering)
 ### 4. Virtual Dom 사용
-> Virtual DOM은 메모리에 가상으로 존재하는 DOM 으로서 그냥 JavaScript 객체이기 때문에 작동 성능이 실제로 브라우저에서 DOM 을 보여주는 것 보다 속도가 훨씬 빠르다.
+> Virtual DOM은 메모리에 가상으로 존재하는 DOM 으로서 그냥 JavaScript 객체이기 때문에 작동 성능이 실제로 브라우저에서 DOM을 보여주는 것 보다 속도가 훨씬 빠르다.
