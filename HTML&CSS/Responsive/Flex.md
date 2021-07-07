@@ -30,3 +30,29 @@
 - nowrap(default): 자식요소의 줄 안바꾸고 너비 강제로 줄이기
 - wrap: 자식 요소의 너비를 줄이지 않으면서 줄을 바꿈
 - wrap-reverse: 
+
+#### flex-grow
+> 플렉스 자식요소의 증가 너비 비율을 설정
+```css
+.child {
+  flex-grow: 1; // 전체의 1/4을 차지
+}
+.child2 {
+  flex-gorw: 2; // 전체의 2/4을 차지
+}
+.child3{
+  flex-grow: 1; // 전체의 1/4을 차지
+}
+```
+- 이 두개가 동일
+```css
+.child {
+  flex: 1; // 전체의 1/4을 차지
+}
+.child2 {
+  flex: 2; // 전체의 2/4을 차지
+}
+.child3{
+  flex: 1; // 전체의 1/4을 차지
+}
+```
