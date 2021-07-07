@@ -1,5 +1,4 @@
 # Flex
-
 - ```<body>```를 제외하고 모든 것은 부모이자 자식 요소가 될 수 있다.
 ### 부모요소에 쓰는 속성
 - display:flex / justify-content / align-items/ flex-direction / flex-wrap / align-content
@@ -56,3 +55,9 @@
   flex: 1; // 전체의 1/4을 차지
 }
 ```
+
+### flex-shrink
+> 플렉스 자식요소의 감소 너비 비율을 설정 (실제로 활용도 많이 떨어짐)
+
+### flx-basis
+> 플렉스 자식요소의 공간 배분 전 기본 너비 설정
