@@ -22,3 +22,32 @@ console.log(arr2); // [15, 395, 400, 3000]
 //  3이 제외된 배열을 만들고 싶을 때,
 array.filter((num) => num !== 3); // [1, 2, 4, 5]
 ```
+
+```js
+onRemove = (id) => {
+// React를 활용한 To-do-list에서 제거함수
+setTodos(todos.filter((todo) => todo.id !== id))
+}
+```
+
+## .map
+> callback 함수를 실행한 결과를 가지고 새로운 배열을 만들 때 사용
+
+```js
+// 제곱근 구하기
+var numbers = [4,9,16,25,36];
+var result = numbers.map(Math.sqrt);
+console.log(result); // [2,3,4,5,6]
+```
+```js
+// 2배의 값 구하기
+var numbers = [ 1,2,3,4,5,6,7,8,9];
+var newNumbers = numbers.map(number =>number *2);
+console.log(newNumbers); // [2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
+```js
+// React를 활용한 To-do-list에서 Toggle함수
+const onToggle = (id) => {
+  setTodos(todos.map((todo)=> todo.id === id ? {...todo, done: !todo.done} : todo)
+}
+```
