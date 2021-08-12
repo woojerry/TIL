@@ -48,6 +48,7 @@ console.log(newNumbers); // [2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```js
 // React를 활용한 To-do-list에서 Toggle함수
 const onToggle = (id) => {
-  setTodos(todos.map((todo)=> todo.id === id ? {...todo, done: !todo.done} : todo)
+  todos.map((todo) => todo.id === id ? {...todo, done: !todo.done} : todo)
+  )
 }
 ```
