@@ -12,7 +12,7 @@
 - 위 코드에서 ```header```는 **Block**, ```naviagtion```은 **Element**, ```navi-text```는 **Modifier**
 - BEM은 Block, Element, Modifier를 뜻한다.
 - BEM은 기본적으로 **ID를 사용하지 않으며, class만을 사용**한다.
-- '어떻게 보이는가'가 아니라 **'어떤 목적인가'**에 따라 이름을 짓는다.
+- '어떻게 보이는가'가 아니라 **어떤 목적인가**에 따라 이름을 짓는다.
 - 이름을 연결할 때는 ```block-name```과 같이 하이픈 하나만 써서 연결한다.
 
 #### Block 
