@@ -17,3 +17,6 @@ yarn create react-app my-app --template typescript
 
 ## 확장자
 - ```.TypeScript```를 사용 할때는 ```.ts```, ```React 컴포넌트```의 경우에는 ```.tsx``` 확장자를 사용한다.
+
+## Styled-components
+- ```npm i styled-components @types/styled-components``` 명령어로 설치
