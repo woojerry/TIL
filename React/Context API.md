@@ -45,7 +45,7 @@ function App() {
 - 다른파일에 공유하고 싶을 때 : 똑같이 범위로 감싸고, 범위 export 하고 사용하고 싶은 파일에서 import해주기
 - 예) App.js에서 Detail.js로 -> App.js에서 export하고 Detail.js에서 import해서 사용
 ```jsx
-export let 재고context = React.createContext(); // export 해주기
+export let 재고context = React.createContext(); // export 해주기ㅆ
 
 <Route path="/detail/:id">
  <재고context.Provider value={재고}> // 범위로 감싸기 + value
@@ -56,4 +56,34 @@ export let 재고context = React.createContext(); // export 해주기
 
 ```jsx
 import {재고context} from './App.js';
+```
+
+- Provider value안에 여러값을 객체형식으로도 넣어서 사용가능하다.
+```jsx
+// Provider 부분
+      <todoContext.Provider
+        value={{
+          todos: todos,
+          onCreate: createHandler,
+          onRemove: removeHandler,
+          onToggle: toggleHandler,
+          nextId: nextId,
+        }}
+      >
+        <GlobalStyle />
+        <TodoTemplate>
+          <TodoHead />
+          <TodoList />
+          <TodoCreate />
+        </TodoTemplate>
+      </todoContext.Provider>
+```        
+```jsx
+// 사용하는 부분
+import { todoContext } from "../App";
+...
+const TodoList = () => {
+const { todos, onRemove, onToggle } = useContext(todoContext);
+...
+}
 ```
