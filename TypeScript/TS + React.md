@@ -20,3 +20,6 @@ yarn create react-app my-app --template typescript
 
 ## Styled-components
 - ```npm i styled-components @types/styled-components``` 명령어로 설치
+
+## jsx-runtime오류
+> ```npm install @types/react```로 해결
