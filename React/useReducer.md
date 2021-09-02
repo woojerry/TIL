@@ -1,7 +1,7 @@
 ### Reducer
 > 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
 ```jsx
-function reducer(state, action) {
+function reducer(state, action) { // state는 상태, action객체를 통해서 state에 변화를 준다.
   // 새로운 상태를 만드는 로직
   // const nextState = ...
   return nextState;
