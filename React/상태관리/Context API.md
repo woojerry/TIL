@@ -59,6 +59,7 @@ import {재고context} from './App.js';
 ```
 
 - Provider value안에 여러값을 객체형식으로도 넣어서 사용가능하다.
+- 하지만 이 방식 이Context를 공유하는 컴포넌트들이 재랜더링이 일어날 수 있기에 좋은 방법은 아니다.
 ```jsx
 // Provider 부분
       <todoContext.Provider
