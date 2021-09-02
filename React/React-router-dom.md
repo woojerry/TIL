@@ -1,4 +1,4 @@
-## Routing
+## Routing 
 > 페이지 나누기
 - react는 view만 담당하는 라이브러리이므로 라우팅을 담당하는 react-router을 따로 설치해주어야 한다. 그리고 나중에 model과 controller를 담당하는 패키지를 또 설치해야 한다.
 - react-router-dom 라이브러리 사용
@@ -26,6 +26,7 @@
     - **상위컴포넌트가 중요 데이터를 다 가지고 있고, 하위컴포넌트가 data를 props로 받아 쓰는 것이 좋다.**
 
 ### Link
+> **React에서 라우팅을 할 때 주로 Link태그로 감싸는 것이 바뀐 부분만 렌더링 해주므로 기존 HTML a태그를 사용하는 것보다 훨씬 효율적이다.**
 - ```<Link>```태그 사용법
     - ```<Nav.Link> <Link to="/detail">Detail</Link> </Nav.Link>```처럼 원하는 곳에 Link태그로 감싸고 to 속성을 이용해 경로 지정
 
