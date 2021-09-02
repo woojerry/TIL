@@ -8,7 +8,7 @@ function reducer(state, action) { // state는 상태, action객체를 통해서 
 }
 ```
 ## useReducer
-> 상태를 업데이트하고 관리할 때 ```useState```를 사용하는 것과 같은 방법의 컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있는 Hook
+> 상태를 업데이트하고 관리할 때 ```useState```를 사용하는 것과 같은 방법의 컴포넌트의 **상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있는** Hook
 ```jsx
 const [state, dispatch] = useReducer(reducer, initialState);
 // state는 컴포넌트에서 사용할 수 있는 상태
