@@ -38,4 +38,4 @@ function App(){
 ```jsx
 axios.post('[데이터보낼URL]', { id : 'test', pw : 1234})
 ```
-- 페이지를 처음으로 방문했을 때, ajax 요청하고 싶을 때 : useEffect()사용 
+
