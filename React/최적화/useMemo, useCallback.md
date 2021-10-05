@@ -1,3 +1,7 @@
+### 최적화 
+> React에서 컴포넌트를 실행하여 React.element를 만들어내는 과정인 ```렌더링```은 컴포넌트 내 state가 변경되었을 때나 props값이 바뀌었을 때이다. 
+
+
 ### React.memo
 > React는 컴포넌트에 있는 props나 state가 변경되면 그것을 사용하는 HTML 전부 재렌더링된다. 그럴 때, props가 변경되지 않은 컴포넌트는 재렌더링 하지 않도록 하게 하는 것
 ```import {memo} from 'react';```
