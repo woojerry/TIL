@@ -4,10 +4,9 @@
 
  1. ```<자식Component 작명 = {state명} />```
  2. 자식 Component 선언하는 function안에 파라미터 입력 후 사용
- 3. 요즘은 비구조화 할당?? 으로 많이 
- 
+ 3. 요즘은 비구조화 할당으로 많이하는 추세.
 ```jsx
-  import React from 'react'; // App.js
+import React from 'react'; // App.js
 import Hello from './Hello';
 
 function App() {
