@@ -5,7 +5,7 @@
 1. ```import {lazy, Suspense} from 'react';``` import 해오기
 2. ```import Detail from './Detail.js';``` -> ```let Detail = lazy(() => { return import('./Detail.js'); });```
 3. ```<Suspense>```컴포넌트로 감싸주기
-4. fallback 속성에는 ```원하는 컴포넌트 로딩 전까지 띄울 원하는 HTML을 적기 
+4. fallback 속성에는 원하는 컴포넌트 로딩 전까지 띄울 원하는 HTML을 적기 
 ```jsx
 <Suspense fallback={ <div>로딩중입니다~!</div> }>
       <Detail/>
