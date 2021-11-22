@@ -44,3 +44,10 @@ console.log(result);
 ```js
 setTodos(todos.filter((todo) => todo.id !== id));
 ```
+
+```js
+  useEffect(()=> {
+        let tmp = response.filter(el => el.toUpperCase().includes(keyword.toUpperCase()));
+        setFilteredResponses(tmp);
+  }, [keyword])
+```
