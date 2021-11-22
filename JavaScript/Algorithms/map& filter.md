@@ -45,6 +45,7 @@ console.log(result);
 setTodos(todos.filter((todo) => todo.id !== id));
 ```
 
+- ```React```에서의 응용: 실시간으로 input값에 따라 filter된 값 보여주기 위해 새로운 배열로 ```setState()```할 경우
 ```js
   useEffect(()=> {
         let tmp = response.filter(el => el.toUpperCase().includes(keyword.toUpperCase()));
